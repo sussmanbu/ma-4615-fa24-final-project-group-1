@@ -2,42 +2,74 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://sussmanbu.github.io/ma-4615-fa24-final-project-group-1/data.html</loc>
-    <lastmod>2024-10-22T00:38:06.371Z</lastmod>
+    <lastmod>2024-11-12T03:03:33.229Z</lastmod>
   </url>
   <url>
     <loc>https://sussmanbu.github.io/ma-4615-fa24-final-project-group-1/analysis.html</loc>
-    <lastmod>2024-10-22T00:38:06.371Z</lastmod>
+    <lastmod>2024-11-12T03:03:33.229Z</lastmod>
   </url>
   <url>
     <loc>https://sussmanbu.github.io/ma-4615-fa24-final-project-group-1/index.html</loc>
-    <lastmod>2024-10-22T00:38:06.374Z</lastmod>
+    <lastmod>2024-11-12T03:03:33.232Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sussmanbu.github.io/ma-4615-fa24-final-project-group-1/dataset/cleaning_primah.html</loc>
+    <lastmod>2024-11-12T03:13:43.291Z</lastmod>
   </url>
   <url>
     <loc>https://sussmanbu.github.io/ma-4615-fa24-final-project-group-1/posts/2024-10-21-blog-post/blog-02.html</loc>
-    <lastmod>2024-10-22T02:06:40.642Z</lastmod>
+    <lastmod>2024-11-12T03:03:33.233Z</lastmod>
   </url>
   <url>
-    <loc>https://sussmanbu.github.io/ma-4615-fa24-final-project-group-1/posts/2023-10-13-first-team-meeting/first-team-meeting.html</loc>
-    <lastmod>2024-10-22T00:38:06.374Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sussmanbu.github.io/ma-4615-fa24-final-project-group-1/posts/2023-10-15-getting-started/getting-started.html</loc>
-    <lastmod>2024-10-22T00:38:06.375Z</lastmod>
+    <loc>https://sussmanbu.github.io/ma-4615-fa24-final-project-group-1/posts/2024-11-06-blog-post/blog-03.html</loc>
+    <lastmod>2024-11-12T03:11:39.490Z</lastmod>
   </url>
   <url>
     <loc>https://sussmanbu.github.io/ma-4615-fa24-final-project-group-1/posts/2024-10-11-blog-post/blog-01.html</loc>
-    <lastmod>2024-10-22T00:38:06.375Z</lastmod>
+    <lastmod>2024-11-12T03:03:33.232Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sussmanbu.github.io/ma-4615-fa24-final-project-group-1/posts/2024-10-28-blog-post/data_equity.html</loc>
+    <lastmod>2024-11-12T03:03:33.233Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sussmanbu.github.io/ma-4615-fa24-final-project-group-1/posts/2023-10-13-first-team-meeting/first-team-meeting.html</loc>
+    <lastmod>2024-11-12T03:03:33.232Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sussmanbu.github.io/ma-4615-fa24-final-project-group-1/posts/2023-10-15-getting-started/getting-started.html</loc>
+    <lastmod>2024-11-12T03:03:33.232Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sussmanbu.github.io/ma-4615-fa24-final-project-group-1/posts/2024-10-28-blog-post/data_clean.html</loc>
+    <lastmod>2024-11-12T03:03:33.233Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sussmanbu.github.io/ma-4615-fa24-final-project-group-1/posts/2024-10-28/data_equity.html</loc>
+    <lastmod>2024-11-12T03:03:33.233Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sussmanbu.github.io/ma-4615-fa24-final-project-group-1/posts/2024-11-11-blog-post/blog-04.html</loc>
+    <lastmod>2024-11-12T03:03:33.234Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sussmanbu.github.io/ma-4615-fa24-final-project-group-1/posts/2024-11-06-blog-post/blog-03-eda-xiang.html</loc>
+    <lastmod>2024-11-12T03:12:13.412Z</lastmod>
   </url>
   <url>
     <loc>https://sussmanbu.github.io/ma-4615-fa24-final-project-group-1/posts/2023-12-20-examples/examples.html</loc>
-    <lastmod>2024-10-22T00:38:06.375Z</lastmod>
+    <lastmod>2024-11-12T03:03:33.232Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sussmanbu.github.io/ma-4615-fa24-final-project-group-1/dataset/Cleaning_Xiang.html</loc>
+    <lastmod>2024-11-12T03:14:01.004Z</lastmod>
   </url>
   <url>
     <loc>https://sussmanbu.github.io/ma-4615-fa24-final-project-group-1/about.html</loc>
-    <lastmod>2024-10-22T00:38:06.371Z</lastmod>
+    <lastmod>2024-11-12T03:03:33.229Z</lastmod>
   </url>
   <url>
     <loc>https://sussmanbu.github.io/ma-4615-fa24-final-project-group-1/big_picture.html</loc>
-    <lastmod>2024-10-22T00:38:06.371Z</lastmod>
+    <lastmod>2024-11-12T03:03:33.229Z</lastmod>
   </url>
 </urlset>
