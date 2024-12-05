@@ -263,42 +263,14 @@
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "This comes from the file about.qmd.\nThis is a website for the final project for MA[46]15 Data Science with R by Team TEAMNAME. The members of this team are below."
+    "text": "This is a website for the final project for MA[46]15 Data Science with R by Team [TEAMNAME]."
   },
   {
-    "objectID": "about.html#yifei-zhang",
-    "href": "about.html#yifei-zhang",
+    "objectID": "about.html#our-team",
+    "href": "about.html#our-team",
     "title": "About",
-    "section": "Yifei Zhang",
-    "text": "Yifei Zhang\nMajor: Economics & Math\nFrom: China"
-  },
-  {
-    "objectID": "about.html#primah-muwanga",
-    "href": "about.html#primah-muwanga",
-    "title": "About",
-    "section": "Primah Muwanga",
-    "text": "Primah Muwanga\nMajor: Data Science\nMinor: Engineering Science\nFrom: Uganda"
-  },
-  {
-    "objectID": "about.html#xiang-fu",
-    "href": "about.html#xiang-fu",
-    "title": "About",
-    "section": "Xiang Fu",
-    "text": "Xiang Fu\nMajor: Data Science\nMinor: Statistics\nFrom: China"
-  },
-  {
-    "objectID": "about.html#nora-oneill",
-    "href": "about.html#nora-oneill",
-    "title": "About",
-    "section": "Nora O’Neill",
-    "text": "Nora O’Neill\nMajor: Math(Concentration in Statistics)\nMinor: Business\nFrom: Newton, Massachusetts"
-  },
-  {
-    "objectID": "about.html#tejas-kaur",
-    "href": "about.html#tejas-kaur",
-    "title": "About",
-    "section": "Tejas Kaur",
-    "text": "Tejas Kaur\nMajor: Economics and Math\nMinor: Data Science\nFrom: Jaipur, India\n\n\nAbout this Template.\nThis is based off of the standard Quarto website template from RStudio (2023.09.0 Build 463)."
+    "section": "Our Team",
+    "text": "Our Team\n\nYifei Zhang\n\nMajor: Economics & Mathematics\nHome: Shenzhen, China\n\n\n\nPrimah Muwanga\n\nMajor: Data Science\nMinor: Engineering Science\nHome: Uganda\n\n\n\nXiang Fu\n\nMajor: Data Science\nMinor: Statistics\nHome: China\n\n\n\nNora O’Neill\n\nMajor: Mathematics (Statistics Concentration)\nMinor: Business\nHome: Newton, Massachusetts\n\n\n\nTejas Kaur\n\nMajor: Economics and Mathematics\nMinor: Data Science\nHome: Jaipur, India\n\n\n\n\nAbout this Template.\nThis is based off of the standard Quarto website template from RStudio (2023.09.0 Build 463)."
   },
   {
     "objectID": "big_picture.html",
