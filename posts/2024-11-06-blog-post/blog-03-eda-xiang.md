@@ -1,4 +1,4 @@
-# EDA
+# Blog Post 3 - EDA Section 2
 
 
 Setting up the environment and loading the data.
