@@ -270,7 +270,7 @@
     "href": "about.html#our-team",
     "title": "About",
     "section": "Our Team",
-    "text": "Our Team\n\nYifei Zhang\n\nMajor: Economics & Mathematics\nHome: Shenzhen, China\n\n\n\nPrimah Muwanga\n\nMajor: Data Science\nMinor: Engineering Science\nHome: Uganda\n\n\n\nXiang Fu\n\nMajor: Data Science\nMinor: Statistics\nHome: China\n\n\n\nNora O’Neill\n\nMajor: Mathematics (Statistics Concentration)\nMinor: Business\nHome: Newton, Massachusetts\n\n\n\nTejas Kaur\n\nMajor: Economics and Mathematics\nMinor: Data Science\nHome: Jaipur, India\n\n\n\n\nAbout this Template.\nThis is based off of the standard Quarto website template from RStudio (2023.09.0 Build 463)."
+    "text": "Our Team\n\nYifei Zhang\nMajor: Economics & Mathematics Home: China\n\n\nPrimah Muwanga\nMajor: Data Science Minor: Engineering Science Home: Uganda\n\n\nXiang Fu\nMajor: Data Science Minor: Statistics Home: China\n\n\nNora O’Neill\nMajor: Mathematics (Statistics Concentration) Minor: Business Home: Newton, Massachusetts\n\n\nTejas Kaur\nMajor: Economics and Mathematics Minor: Data Science Home: Jaipur, India\n\n\n\nAbout this Template.\nThis is based off of the standard Quarto website template from RStudio (2023.09.0 Build 463)."
   },
   {
     "objectID": "big_picture.html",
