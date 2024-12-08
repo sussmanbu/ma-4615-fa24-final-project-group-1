@@ -9,7 +9,7 @@
 <meta name="author" content="Group 1">
 <meta name="dcterms.date" content="2024-11-06">
 
-<title>Blog Post 3: EDA – MA [46]15 Final Project - Group 1</title>
+<title>Blog Post 4 - EDA and Modeling Section 1 – MA [46]15 Final Project - Group 1</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -130,7 +130,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../../big_picture.html"> 
-<span class="menu-text">Road Real Talk: Crashes, Conditions, and Rescue</span></a>
+<span class="menu-text">Big Picture</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../../analysis.html"> 
@@ -151,7 +151,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Blog Post 3: EDA</h1>
+      <h1 class="title">Blog Post 4 - EDA and Modeling Section 1</h1>
                       </div>
   </div>
     
@@ -199,7 +199,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>cleaned_dataset <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"/dataset/cleaned_dataset.rds"</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>cleaned_dataset <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"dataset/cleaned_dataset.rds"</span>)</span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>road_crash_data <span class="ot">&lt;-</span> cleaned_dataset <span class="sc">%&gt;%</span></span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(<span class="st">`</span><span class="at">Road.Name</span><span class="st">`</span>)) <span class="sc">%&gt;%</span></span>

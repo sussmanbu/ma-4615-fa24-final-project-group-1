@@ -129,7 +129,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./big_picture.html"> 
-<span class="menu-text">Road Real Talk: Crashes, Conditions, and Rescue</span></a>
+<span class="menu-text">Big Picture</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./analysis.html"> 
@@ -155,7 +155,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#what-makes-a-good-data-set" id="toc-what-makes-a-good-data-set" class="nav-link active" data-scroll-target="#what-makes-a-good-data-set">What makes a good data set?</a></li>
+  <li><a href="#primary-data-source" id="toc-primary-data-source" class="nav-link active" data-scroll-target="#primary-data-source">Primary Data Source</a></li>
+  <li><a href="#data-description-and-variables" id="toc-data-description-and-variables" class="nav-link" data-scroll-target="#data-description-and-variables">Data Description and Variables</a></li>
+  <li><a href="#data-cleaning-and-processing" id="toc-data-cleaning-and-processing" class="nav-link" data-scroll-target="#data-cleaning-and-processing">Data Cleaning and Processing</a>
+  <ul class="collapse">
+  <li><a href="#data-loading" id="toc-data-loading" class="nav-link" data-scroll-target="#data-loading">Data Loading</a></li>
+  <li><a href="#variable-cleaning" id="toc-variable-cleaning" class="nav-link" data-scroll-target="#variable-cleaning">Variable Cleaning</a></li>
+  <li><a href="#additional-packages" id="toc-additional-packages" class="nav-link" data-scroll-target="#additional-packages">Additional Packages</a></li>
+  <li><a href="#data-integration" id="toc-data-integration" class="nav-link" data-scroll-target="#data-integration">Data Integration</a></li>
+  </ul></li>
+  <li><a href="#what-makes-a-good-data-set" id="toc-what-makes-a-good-data-set" class="nav-link" data-scroll-target="#what-makes-a-good-data-set">What makes a good data set?</a></li>
   <li><a href="#where-to-keep-data" id="toc-where-to-keep-data" class="nav-link" data-scroll-target="#where-to-keep-data">Where to keep data?</a>
   <ul class="collapse">
   <li><a href="#sharing-your-data" id="toc-sharing-your-data" class="nav-link" data-scroll-target="#sharing-your-data">Sharing your data</a></li>
@@ -192,10 +201,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p><img src="images/data-import-cheatsheet-thumbs.png" class="img-fluid"></p>
+<section id="primary-data-source" class="level2">
+<h2 class="anchored" data-anchor-id="primary-data-source">Primary Data Source</h2>
+<p>The primary dataset used in this analysis comes from Montgomery County, Maryland’s open data portal, specifically the “Crash Reporting - Drivers Data” dataset. This dataset is publicly available and can be accessed at <a href="https://data.montgomerycountymd.gov/Public-Safety/Crash-Reporting-Drivers-Data/mmzv-x632">Montgomery County’s Data Portal</a>. The data is collected through the Automated Crash Reporting System (ACRS) of the Maryland State Police and includes reports from multiple law enforcement agencies: Montgomery County Police, Gaithersburg Police, Rockville Police, and the Maryland-National Capital Park Police.</p>
+<p>The dataset was created and is maintained as part of Montgomery County’s commitment to public safety and transparency, particularly in support of their Vision Zero initiative (as indicated by the dataset’s keywords). Vision Zero is a strategy to eliminate all traffic fatalities and severe injuries while increasing safe, healthy, equitable mobility for all. The data collection serves multiple purposes: - To track and analyze traffic collision patterns across the county - To inform policy decisions regarding traffic safety measures - To provide transparency about traffic incidents to the public - To support the coordination between different law enforcement agencies in the county</p>
+<p>The dataset is updated weekly and contains detailed information about traffic collisions occurring on county and local roadways. Each record represents a driver involved in a collision, with 39 variables capturing various aspects of the incident, including:</p>
+<p>Key Variables: - Temporal and Spatial Information: Crash Date/Time, Location (Latitude/Longitude), Road Name - Environmental Conditions: Weather, Surface Condition, Light, Traffic Control - Driver Details: Driver At Fault, Injury Severity, Driver Substance Abuse, Driver Distracted By - Vehicle Information: Vehicle Make, Model, Year, Body Type, Damage Extent</p>
+</section>
+<section id="data-description-and-variables" class="level2">
+<h2 class="anchored" data-anchor-id="data-description-and-variables">Data Description and Variables</h2>
+</section>
+<section id="data-cleaning-and-processing" class="level2">
+<h2 class="anchored" data-anchor-id="data-cleaning-and-processing">Data Cleaning and Processing</h2>
+<section id="data-loading" class="level3">
+<h3 class="anchored" data-anchor-id="data-loading">Data Loading</h3>
+</section>
+<section id="variable-cleaning" class="level3">
+<h3 class="anchored" data-anchor-id="variable-cleaning">Variable Cleaning</h3>
+</section>
+<section id="additional-packages" class="level3">
+<h3 class="anchored" data-anchor-id="additional-packages">Additional Packages</h3>
+</section>
+<section id="data-integration" class="level3">
+<h3 class="anchored" data-anchor-id="data-integration">Data Integration</h3>
+<hr>
 <p>This comes from the file <code>data.qmd</code>.</p>
 <p>Your first steps in this project will be to find data to work on.</p>
 <p>Initially, you will study <em>one dataset</em> but later you will need to combine that data with another dataset. For this reason, I recommend finding data that has some date and/or location components. These types of data are conducive to interesting visualizations and analysis and you can also combine this data with other data that also has a date or location variable. Data from the census, weather data, economic data, are all relatively easy to combine with other data with time/location components.</p>
+</section>
+</section>
 <section id="what-makes-a-good-data-set" class="level2">
 <h2 class="anchored" data-anchor-id="what-makes-a-good-data-set">What makes a good data set?</h2>
 <ul>
@@ -215,7 +249,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>For small datasets (&lt;50mb), you can use the <code>dataset</code> folder that is tracked by github. Add the files just like you would any other file.</p>
 <p>If you create a folder named <code>data</code> this will cause problems.</p>
 <p>For larger datasets, you’ll need to create a new folder in the project root directory named <code>dataset-ignore</code>. This will be ignored by git (based off the <code>.gitignore</code> file in the project root directory) which will help you avoid issues with Github’s size limits. Your team will have to manually make sure the data files in <code>dataset-ignore</code> are synced across team members.</p>
-<p>Your <a href=".\scripts/load_and_clean_data.R">load_and_clean_data.R</a> file is how you will load and clean your data. Here is a an example of a very simple one.</p>
+<p>Your <a href="./scripts/load_and_clean_data.R">load_and_clean_data.R</a> file is how you will load and clean your data. Here is a an example of a very simple one.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">"scripts/load_and_clean_data.R"</span>,</span>
@@ -224,12 +258,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell-output cell-output-stdout">
 <pre><code>
 &gt; library(tidyverse)</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'ggplot2' was built under R version 4.4.2</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'dplyr' was built under R version 4.4.2</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
 <pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
@@ -271,7 +299,7 @@ dbl (4): min, white, himin, hiwhite
 </section>
 <section id="load-and-clean-data-script" class="level3">
 <h3 class="anchored" data-anchor-id="load-and-clean-data-script">Load and clean data script</h3>
-<p>The idea behind this file is that someone coming to your website could largely replicate your analyses after running this script on the original data sets to clean them. This file might create a derivative data set that you then use for your subsequent analysis. Note that you don’t need to run this script from every post/page. Instead, you can load in the results of this script, which could be plain text files or <code>.RData</code> files. In your data page you’ll describe how these results were created. If you have a very large data set, you might save smaller data sets that you can use for exploration purposes. To link to this file, you can use <code>[cleaning script](/scripts/load_and_clean_data.R)</code> wich appears as <a href=".\scripts/load_and_clean_data.R">cleaning script</a>.</p>
+<p>The idea behind this file is that someone coming to your website could largely replicate your analyses after running this script on the original data sets to clean them. This file might create a derivative data set that you then use for your subsequent analysis. Note that you don’t need to run this script from every post/page. Instead, you can load in the results of this script, which could be plain text files or <code>.RData</code> files. In your data page you’ll describe how these results were created. If you have a very large data set, you might save smaller data sets that you can use for exploration purposes. To link to this file, you can use <code>[cleaning script](/scripts/load_and_clean_data.R)</code> wich appears as <a href="./scripts/load_and_clean_data.R">cleaning script</a>.</p>
 <hr>
 </section>
 </section>

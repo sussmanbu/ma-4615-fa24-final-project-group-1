@@ -1,83 +1,79 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://sussmanbu.github.io/ma-4615-fa24-final-project-group-1/posts/2024-12-02-blog-post/blog-07.html</loc>
-    <lastmod>2024-12-02T14:44:27.753Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sussmanbu.github.io/ma-4615-fa24-final-project-group-1/posts/2024-11-11-blog-post/blog-05.html</loc>
-    <lastmod>2024-11-20T03:45:46.938Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sussmanbu.github.io/ma-4615-fa24-final-project-group-1/posts/2024-11-06-blog-post/blog-03-eda-xiang.html</loc>
-    <lastmod>2024-11-20T03:45:46.932Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sussmanbu.github.io/ma-4615-fa24-final-project-group-1/posts/2024-10-28-blog-post/data_clean.html</loc>
-    <lastmod>2024-12-06T05:48:36.437Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sussmanbu.github.io/ma-4615-fa24-final-project-group-1/posts/2024-10-11-blog-post/blog-01.html</loc>
-    <lastmod>2024-10-23T13:30:59.771Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sussmanbu.github.io/ma-4615-fa24-final-project-group-1/posts/2023-10-15-getting-started/getting-started.html</loc>
-    <lastmod>2024-12-02T14:50:59.548Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sussmanbu.github.io/ma-4615-fa24-final-project-group-1/index.html</loc>
-    <lastmod>2024-10-11T21:01:50.726Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sussmanbu.github.io/ma-4615-fa24-final-project-group-1/dataset/cleaning_for_crashes.html</loc>
-    <lastmod>2024-11-20T03:45:46.930Z</lastmod>
-  </url>
-  <url>
     <loc>https://sussmanbu.github.io/ma-4615-fa24-final-project-group-1/data.html</loc>
-    <lastmod>2024-10-18T14:13:12.355Z</lastmod>
+    <lastmod>2024-12-05T07:07:50.311Z</lastmod>
   </url>
   <url>
     <loc>https://sussmanbu.github.io/ma-4615-fa24-final-project-group-1/analysis.html</loc>
-    <lastmod>2024-12-06T07:10:06.056Z</lastmod>
+    <lastmod>2024-11-12T03:03:33.229Z</lastmod>
   </url>
   <url>
-    <loc>https://sussmanbu.github.io/ma-4615-fa24-final-project-group-1/about.html</loc>
-    <lastmod>2024-12-06T07:09:55.892Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sussmanbu.github.io/ma-4615-fa24-final-project-group-1/big_picture.html</loc>
-    <lastmod>2024-12-06T07:10:09.555Z</lastmod>
+    <loc>https://sussmanbu.github.io/ma-4615-fa24-final-project-group-1/index.html</loc>
+    <lastmod>2024-12-05T07:27:57.324Z</lastmod>
   </url>
   <url>
     <loc>https://sussmanbu.github.io/ma-4615-fa24-final-project-group-1/dataset/2017_PoliceXCrash.html</loc>
-    <lastmod>2024-12-02T14:22:53.132Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sussmanbu.github.io/ma-4615-fa24-final-project-group-1/dataset/Cleaning_Xiang.html</loc>
-    <lastmod>2024-11-20T03:45:46.928Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sussmanbu.github.io/ma-4615-fa24-final-project-group-1/posts/2023-10-13-first-team-meeting/first-team-meeting.html</loc>
-    <lastmod>2024-10-07T13:14:11.022Z</lastmod>
+    <lastmod>2024-12-02T14:32:49.742Z</lastmod>
   </url>
   <url>
     <loc>https://sussmanbu.github.io/ma-4615-fa24-final-project-group-1/posts/2023-12-20-examples/examples.html</loc>
-    <lastmod>2024-10-07T13:14:11.025Z</lastmod>
+    <lastmod>2024-11-12T03:03:33.232Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sussmanbu.github.io/ma-4615-fa24-final-project-group-1/posts/2024-12-02-blog-post/blog-07.html</loc>
+    <lastmod>2024-12-08T19:32:02.569Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sussmanbu.github.io/ma-4615-fa24-final-project-group-1/posts/2024-11-06-blog-post/blog-04-eda-xiang.html</loc>
+    <lastmod>2024-12-05T07:47:08.736Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sussmanbu.github.io/ma-4615-fa24-final-project-group-1/posts/2024-11-11-blog-post/blog-05.html</loc>
+    <lastmod>2024-12-05T08:00:34.949Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sussmanbu.github.io/ma-4615-fa24-final-project-group-1/posts/2024-10-28-blog-post/blog-03.html</loc>
+    <lastmod>2024-12-05T07:57:02.759Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sussmanbu.github.io/ma-4615-fa24-final-project-group-1/posts/2023-10-15-getting-started/getting-started.html</loc>
+    <lastmod>2024-11-12T03:03:33.232Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sussmanbu.github.io/ma-4615-fa24-final-project-group-1/posts/2023-10-13-first-team-meeting/first-team-meeting.html</loc>
+    <lastmod>2024-12-02T14:33:09.573Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sussmanbu.github.io/ma-4615-fa24-final-project-group-1/posts/2024-10-11-blog-post/blog-01.html</loc>
+    <lastmod>2024-12-05T07:50:23.825Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sussmanbu.github.io/ma-4615-fa24-final-project-group-1/posts/2024-11-06-blog-post/blog-04.html</loc>
+    <lastmod>2024-12-05T07:47:33.248Z</lastmod>
   </url>
   <url>
     <loc>https://sussmanbu.github.io/ma-4615-fa24-final-project-group-1/posts/2024-10-21-blog-post/blog-02.html</loc>
-    <lastmod>2024-10-23T13:55:17.021Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sussmanbu.github.io/ma-4615-fa24-final-project-group-1/posts/2024-10-28-blog-post/data_equity.html</loc>
-    <lastmod>2024-12-06T05:48:36.437Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sussmanbu.github.io/ma-4615-fa24-final-project-group-1/posts/2024-11-06-blog-post/blog-03.html</loc>
-    <lastmod>2024-11-20T03:45:46.932Z</lastmod>
+    <lastmod>2024-12-05T07:50:32.985Z</lastmod>
   </url>
   <url>
     <loc>https://sussmanbu.github.io/ma-4615-fa24-final-project-group-1/posts/2024-11-18-blog-post/blog-06.html</loc>
-    <lastmod>2024-12-06T05:48:36.466Z</lastmod>
+    <lastmod>2024-12-05T08:00:22.837Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sussmanbu.github.io/ma-4615-fa24-final-project-group-1/dataset/Cleaning_Xiang.html</loc>
+    <lastmod>2024-11-12T03:14:01.004Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sussmanbu.github.io/ma-4615-fa24-final-project-group-1/dataset/cleaning_for_crashes.html</loc>
+    <lastmod>2024-12-05T06:31:16.343Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sussmanbu.github.io/ma-4615-fa24-final-project-group-1/about.html</loc>
+    <lastmod>2024-12-05T07:19:24.006Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sussmanbu.github.io/ma-4615-fa24-final-project-group-1/big_picture.html</loc>
+    <lastmod>2024-12-02T14:32:49.742Z</lastmod>
   </url>
 </urlset>
