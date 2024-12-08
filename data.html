@@ -129,7 +129,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./big_picture.html"> 
-<span class="menu-text">Big Picture</span></a>
+<span class="menu-text">Road Real Talk: Crashes, Conditions, and Rescue</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./analysis.html"> 
@@ -249,7 +249,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>For small datasets (&lt;50mb), you can use the <code>dataset</code> folder that is tracked by github. Add the files just like you would any other file.</p>
 <p>If you create a folder named <code>data</code> this will cause problems.</p>
 <p>For larger datasets, you’ll need to create a new folder in the project root directory named <code>dataset-ignore</code>. This will be ignored by git (based off the <code>.gitignore</code> file in the project root directory) which will help you avoid issues with Github’s size limits. Your team will have to manually make sure the data files in <code>dataset-ignore</code> are synced across team members.</p>
-<p>Your <a href="./scripts/load_and_clean_data.R">load_and_clean_data.R</a> file is how you will load and clean your data. Here is a an example of a very simple one.</p>
+<p>Your <a href=".\scripts/load_and_clean_data.R">load_and_clean_data.R</a> file is how you will load and clean your data. Here is a an example of a very simple one.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">"scripts/load_and_clean_data.R"</span>,</span>
@@ -258,6 +258,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell-output cell-output-stdout">
 <pre><code>
 &gt; library(tidyverse)</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'ggplot2' was built under R version 4.4.2</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'dplyr' was built under R version 4.4.2</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
 <pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
@@ -299,7 +305,7 @@ dbl (4): min, white, himin, hiwhite
 </section>
 <section id="load-and-clean-data-script" class="level3">
 <h3 class="anchored" data-anchor-id="load-and-clean-data-script">Load and clean data script</h3>
-<p>The idea behind this file is that someone coming to your website could largely replicate your analyses after running this script on the original data sets to clean them. This file might create a derivative data set that you then use for your subsequent analysis. Note that you don’t need to run this script from every post/page. Instead, you can load in the results of this script, which could be plain text files or <code>.RData</code> files. In your data page you’ll describe how these results were created. If you have a very large data set, you might save smaller data sets that you can use for exploration purposes. To link to this file, you can use <code>[cleaning script](/scripts/load_and_clean_data.R)</code> wich appears as <a href="./scripts/load_and_clean_data.R">cleaning script</a>.</p>
+<p>The idea behind this file is that someone coming to your website could largely replicate your analyses after running this script on the original data sets to clean them. This file might create a derivative data set that you then use for your subsequent analysis. Note that you don’t need to run this script from every post/page. Instead, you can load in the results of this script, which could be plain text files or <code>.RData</code> files. In your data page you’ll describe how these results were created. If you have a very large data set, you might save smaller data sets that you can use for exploration purposes. To link to this file, you can use <code>[cleaning script](/scripts/load_and_clean_data.R)</code> wich appears as <a href=".\scripts/load_and_clean_data.R">cleaning script</a>.</p>
 <hr>
 </section>
 </section>
