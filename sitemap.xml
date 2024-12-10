@@ -1,79 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://sussmanbu.github.io/ma-4615-fa24-final-project-group-1/posts/2024-12-02-blog-post/blog-07.html</loc>
-    <lastmod>2024-12-08T22:03:24.856Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sussmanbu.github.io/ma-4615-fa24-final-project-group-1/posts/2024-11-11-blog-post/blog-05.html</loc>
-    <lastmod>2024-12-08T22:03:24.855Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sussmanbu.github.io/ma-4615-fa24-final-project-group-1/posts/2024-11-06-blog-post/blog-04-eda-xiang.html</loc>
-    <lastmod>2024-12-08T22:03:24.852Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sussmanbu.github.io/ma-4615-fa24-final-project-group-1/posts/2024-10-21-blog-post/blog-02.html</loc>
-    <lastmod>2024-12-08T22:03:24.850Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sussmanbu.github.io/ma-4615-fa24-final-project-group-1/posts/2023-12-20-examples/examples.html</loc>
-    <lastmod>2024-10-07T13:14:11.025Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sussmanbu.github.io/ma-4615-fa24-final-project-group-1/posts/2023-10-13-first-team-meeting/first-team-meeting.html</loc>
-    <lastmod>2024-10-07T13:14:11.022Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sussmanbu.github.io/ma-4615-fa24-final-project-group-1/dataset/Cleaning_Xiang.html</loc>
-    <lastmod>2024-11-20T03:45:46.928Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sussmanbu.github.io/ma-4615-fa24-final-project-group-1/dataset/2017_PoliceXCrash.html</loc>
-    <lastmod>2024-12-02T14:22:53.132Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sussmanbu.github.io/ma-4615-fa24-final-project-group-1/big_picture.html</loc>
-    <lastmod>2024-12-09T02:41:56.141Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sussmanbu.github.io/ma-4615-fa24-final-project-group-1/about.html</loc>
-    <lastmod>2024-12-09T02:41:42.300Z</lastmod>
+    <loc>https://sussmanbu.github.io/ma-4615-fa24-final-project-group-1/data.html</loc>
+    <lastmod>2024-12-10T21:46:54.006Z</lastmod>
   </url>
   <url>
     <loc>https://sussmanbu.github.io/ma-4615-fa24-final-project-group-1/analysis.html</loc>
-    <lastmod>2024-12-07T00:32:44.489Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sussmanbu.github.io/ma-4615-fa24-final-project-group-1/data.html</loc>
-    <lastmod>2024-12-08T22:03:23.924Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sussmanbu.github.io/ma-4615-fa24-final-project-group-1/dataset/cleaning_for_crashes.html</loc>
-    <lastmod>2024-11-20T03:45:46.930Z</lastmod>
+    <lastmod>2024-12-10T21:46:54.005Z</lastmod>
   </url>
   <url>
     <loc>https://sussmanbu.github.io/ma-4615-fa24-final-project-group-1/index.html</loc>
-    <lastmod>2024-12-08T22:03:24.844Z</lastmod>
+    <lastmod>2024-12-10T21:46:54.160Z</lastmod>
   </url>
   <url>
-    <loc>https://sussmanbu.github.io/ma-4615-fa24-final-project-group-1/posts/2023-10-15-getting-started/getting-started.html</loc>
-    <lastmod>2024-12-02T14:50:59.548Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sussmanbu.github.io/ma-4615-fa24-final-project-group-1/posts/2024-10-11-blog-post/blog-01.html</loc>
-    <lastmod>2024-12-08T22:03:24.844Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sussmanbu.github.io/ma-4615-fa24-final-project-group-1/posts/2024-10-28-blog-post/blog-03.html</loc>
-    <lastmod>2024-12-08T22:03:24.851Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sussmanbu.github.io/ma-4615-fa24-final-project-group-1/posts/2024-11-06-blog-post/blog-04.html</loc>
-    <lastmod>2024-12-08T22:03:24.853Z</lastmod>
+    <loc>https://sussmanbu.github.io/ma-4615-fa24-final-project-group-1/dataset/2017_PoliceXCrash.html</loc>
+    <lastmod>2024-12-10T21:46:54.006Z</lastmod>
   </url>
   <url>
     <loc>https://sussmanbu.github.io/ma-4615-fa24-final-project-group-1/posts/2024-11-18-blog-post/blog-06.html</loc>
-    <lastmod>2024-12-08T22:03:24.855Z</lastmod>
+    <lastmod>2024-12-10T21:46:54.166Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sussmanbu.github.io/ma-4615-fa24-final-project-group-1/posts/2024-10-21-blog-post/blog-02.html</loc>
+    <lastmod>2024-12-10T21:46:54.161Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sussmanbu.github.io/ma-4615-fa24-final-project-group-1/posts/2024-11-06-blog-post/blog-04.html</loc>
+    <lastmod>2024-12-10T21:46:54.161Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sussmanbu.github.io/ma-4615-fa24-final-project-group-1/posts/2024-10-11-blog-post/blog-01.html</loc>
+    <lastmod>2024-12-10T21:46:54.160Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sussmanbu.github.io/ma-4615-fa24-final-project-group-1/Yifei private folder- not submit/pci-analysis-1-edited.html</loc>
+    <lastmod>2024-12-10T23:08:02.149Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sussmanbu.github.io/ma-4615-fa24-final-project-group-1/posts/2024-10-28-blog-post/blog-03.html</loc>
+    <lastmod>2024-12-10T21:46:54.161Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sussmanbu.github.io/ma-4615-fa24-final-project-group-1/posts/2024-11-11-blog-post/blog-05.html</loc>
+    <lastmod>2024-12-10T21:46:54.161Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sussmanbu.github.io/ma-4615-fa24-final-project-group-1/posts/2024-11-06-blog-post/blog-04-eda-xiang.html</loc>
+    <lastmod>2024-12-10T21:46:54.161Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sussmanbu.github.io/ma-4615-fa24-final-project-group-1/posts/2024-12-02-blog-post/blog-07.html</loc>
+    <lastmod>2024-12-10T21:46:54.166Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sussmanbu.github.io/ma-4615-fa24-final-project-group-1/dataset/Cleaning_Xiang.html</loc>
+    <lastmod>2024-12-10T21:46:54.006Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sussmanbu.github.io/ma-4615-fa24-final-project-group-1/dataset/cleaning_for_crashes.html</loc>
+    <lastmod>2024-12-10T21:46:54.153Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sussmanbu.github.io/ma-4615-fa24-final-project-group-1/about.html</loc>
+    <lastmod>2024-12-10T21:46:54.005Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sussmanbu.github.io/ma-4615-fa24-final-project-group-1/big_picture.html</loc>
+    <lastmod>2024-12-10T21:46:54.005Z</lastmod>
   </url>
 </urlset>
