@@ -155,15 +155,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#primary-data-source" id="toc-primary-data-source" class="nav-link active" data-scroll-target="#primary-data-source">Primary Data Source</a></li>
-  <li><a href="#data-description-and-variables" id="toc-data-description-and-variables" class="nav-link" data-scroll-target="#data-description-and-variables">Data Description and Variables</a></li>
-  <li><a href="#data-cleaning-and-processing" id="toc-data-cleaning-and-processing" class="nav-link" data-scroll-target="#data-cleaning-and-processing">Data Cleaning and Processing</a>
+  <li><a href="#primary-data-source" id="toc-primary-data-source" class="nav-link active" data-scroll-target="#primary-data-source">Primary Data Source</a>
   <ul class="collapse">
-  <li><a href="#data-loading" id="toc-data-loading" class="nav-link" data-scroll-target="#data-loading">Data Loading</a></li>
-  <li><a href="#variable-cleaning" id="toc-variable-cleaning" class="nav-link" data-scroll-target="#variable-cleaning">Variable Cleaning</a></li>
-  <li><a href="#additional-packages" id="toc-additional-packages" class="nav-link" data-scroll-target="#additional-packages">Additional Packages</a></li>
-  <li><a href="#data-integration" id="toc-data-integration" class="nav-link" data-scroll-target="#data-integration">Data Integration</a></li>
+  <li><a href="#key-variables" id="toc-key-variables" class="nav-link" data-scroll-target="#key-variables">Key Variables</a></li>
   </ul></li>
+  <li><a href="#data-cleaning-process" id="toc-data-cleaning-process" class="nav-link" data-scroll-target="#data-cleaning-process">Data Cleaning Process</a>
+  <ul class="collapse">
+  <li><a href="#setup-and-requirements" id="toc-setup-and-requirements" class="nav-link" data-scroll-target="#setup-and-requirements">Setup and Requirements</a></li>
+  <li><a href="#running-the-cleaning-script" id="toc-running-the-cleaning-script" class="nav-link" data-scroll-target="#running-the-cleaning-script">Running the Cleaning Script</a></li>
+  <li><a href="#cleaning-operations" id="toc-cleaning-operations" class="nav-link" data-scroll-target="#cleaning-operations">Cleaning Operations</a></li>
   <li><a href="#what-makes-a-good-data-set" id="toc-what-makes-a-good-data-set" class="nav-link" data-scroll-target="#what-makes-a-good-data-set">What makes a good data set?</a></li>
   <li><a href="#where-to-keep-data" id="toc-where-to-keep-data" class="nav-link" data-scroll-target="#where-to-keep-data">Where to keep data?</a>
   <ul class="collapse">
@@ -171,6 +171,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#load-and-clean-data-script" id="toc-load-and-clean-data-script" class="nav-link" data-scroll-target="#load-and-clean-data-script">Load and clean data script</a></li>
   </ul></li>
   <li><a href="#rubric-on-this-page" id="toc-rubric-on-this-page" class="nav-link" data-scroll-target="#rubric-on-this-page">Rubric: On this page</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -206,29 +207,187 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>The primary dataset used in this analysis comes from Montgomery County, Maryland’s open data portal, specifically the “Crash Reporting - Drivers Data” dataset. This dataset is publicly available and can be accessed at <a href="https://data.montgomerycountymd.gov/Public-Safety/Crash-Reporting-Drivers-Data/mmzv-x632">Montgomery County’s Data Portal</a>. The data is collected through the Automated Crash Reporting System (ACRS) of the Maryland State Police and includes reports from multiple law enforcement agencies: Montgomery County Police, Gaithersburg Police, Rockville Police, and the Maryland-National Capital Park Police.</p>
 <p>The dataset was created and is maintained as part of Montgomery County’s commitment to public safety and transparency, particularly in support of their Vision Zero initiative (as indicated by the dataset’s keywords). Vision Zero is a strategy to eliminate all traffic fatalities and severe injuries while increasing safe, healthy, equitable mobility for all. The data collection serves multiple purposes: - To track and analyze traffic collision patterns across the county - To inform policy decisions regarding traffic safety measures - To provide transparency about traffic incidents to the public - To support the coordination between different law enforcement agencies in the county</p>
 <p>The dataset is updated weekly and contains detailed information about traffic collisions occurring on county and local roadways. Each record represents a driver involved in a collision, with 39 variables capturing various aspects of the incident, including:</p>
-<p>Key Variables: - Temporal and Spatial Information: Crash Date/Time, Location (Latitude/Longitude), Road Name - Environmental Conditions: Weather, Surface Condition, Light, Traffic Control - Driver Details: Driver At Fault, Injury Severity, Driver Substance Abuse, Driver Distracted By - Vehicle Information: Vehicle Make, Model, Year, Body Type, Damage Extent</p>
+<section id="key-variables" class="level3">
+<h3 class="anchored" data-anchor-id="key-variables">Key Variables</h3>
+<ul>
+<li>Temporal and Spatial Information: Crash Date/Time, Location (Latitude/Longitude), Road Name</li>
+<li>Environmental Conditions: Weather, Surface Condition, Light, Traffic Control</li>
+<li>Driver Details: Driver At Fault, Injury Severity, Driver Substance Abuse, Driver Distracted By</li>
+<li>Vehicle Information: Vehicle Make, Model, Year, Body Type, Damage Extent</li>
+</ul>
 </section>
-<section id="data-description-and-variables" class="level2">
-<h2 class="anchored" data-anchor-id="data-description-and-variables">Data Description and Variables</h2>
 </section>
-<section id="data-cleaning-and-processing" class="level2">
-<h2 class="anchored" data-anchor-id="data-cleaning-and-processing">Data Cleaning and Processing</h2>
-<section id="data-loading" class="level3">
-<h3 class="anchored" data-anchor-id="data-loading">Data Loading</h3>
+<section id="data-cleaning-process" class="level1">
+<h1>Data Cleaning Process</h1>
+<p>Our data cleaning process is implemented in our <a href="./scripts/load_and_clean_data.R">load_and_clean_data.R</a> script. Here’s how to use it and what it does:</p>
+<section id="setup-and-requirements" class="level3">
+<h3 class="anchored" data-anchor-id="setup-and-requirements">Setup and Requirements</h3>
+<p>First, ensure you have all required packages installed:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="fu">c</span>(<span class="st">"tidyverse"</span>, <span class="st">"lubridate"</span>, <span class="st">"skimr"</span>, <span class="st">"here"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="variable-cleaning" class="level3">
-<h3 class="anchored" data-anchor-id="variable-cleaning">Variable Cleaning</h3>
+<section id="running-the-cleaning-script" class="level3">
+<h3 class="anchored" data-anchor-id="running-the-cleaning-script">Running the Cleaning Script</h3>
+<p>The script can be run in two ways:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Option 1: Source directly in your Quarto document</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"scripts"</span>, <span class="st">"load_and_clean_data.R"</span>), <span class="at">echo =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+&gt; library(tidyverse)</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.1.4     ✔ readr     2.1.5
+✔ forcats   1.0.0     ✔ stringr   1.5.1
+✔ ggplot2   3.5.1     ✔ tibble    3.2.1
+✔ lubridate 1.9.3     ✔ tidyr     1.3.1
+✔ purrr     1.0.2     
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+&gt; library(lubridate)
+
+&gt; library(skimr)
+
+&gt; library(here)</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>here() starts at /Users/xfu/ma415-project</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+&gt; crash_df &lt;- read.csv(here::here("dataset", "Crash_Reporting_-_Drivers_Data.csv"))
+
+&gt; threshold &lt;- 0.8
+
+&gt; data_clean &lt;- select_if(crash_df, ~mean(is.na(.)) &lt; 
++     threshold)
+
+&gt; data_clean &lt;- mutate(data_clean, Local.Case.Number = as.character(Local.Case.Number))
+
+&gt; data_clean &lt;- mutate(data_clean, Crash.Date.Time = mdy_hms(Crash.Date.Time))
+
+&gt; if ("Route_Type" %in% names(data_clean)) {
++     most_common_route &lt;- names(which.max(table(data_clean$Route_Type[!is.na(data_clean$Route_Type)])))
+ .... [TRUNCATED] 
+
+&gt; data_clean &lt;- distinct(data_clean)
+
+&gt; subset_data &lt;- slice(data_clean, 1:1000)
+
+&gt; saveRDS(data_clean, file = here::here("dataset", "cleaned_dataset_full.rds"))
+
+&gt; saveRDS(subset_data, file = here::here("dataset", 
++     "cleaned_dataset.rds"))
+
+&gt; summary(data_clean)
+ Report.Number      Local.Case.Number  Agency.Name        ACRS.Report.Type  
+ Length:186170      Length:186170      Length:186170      Length:186170     
+ Class :character   Class :character   Class :character   Class :character  
+ Mode  :character   Mode  :character   Mode  :character   Mode  :character  
+                                                                            
+                                                                            
+                                                                            
+ Crash.Date.Time                   Route.Type         Road.Name        
+ Min.   :2015-01-01 00:30:00.00   Length:186170      Length:186170     
+ 1st Qu.:2017-03-24 13:04:15.00   Class :character   Class :character  
+ Median :2019-05-31 15:20:00.00   Mode  :character   Mode  :character  
+ Mean   :2019-09-10 19:20:38.36                                        
+ 3rd Qu.:2022-04-03 06:38:15.00                                        
+ Max.   :2024-10-09 17:06:00.00                                        
+ Cross.Street.Name  Off.Road.Description Municipality      
+ Length:186170      Length:186170        Length:186170     
+ Class :character   Class :character     Class :character  
+ Mode  :character   Mode  :character     Mode  :character  
+                                                           
+                                                           
+                                                           
+ Related.Non.Motorist Collision.Type       Weather          Surface.Condition 
+ Length:186170        Length:186170      Length:186170      Length:186170     
+ Class :character     Class :character   Class :character   Class :character  
+ Mode  :character     Mode  :character   Mode  :character   Mode  :character  
+                                                                              
+                                                                              
+                                                                              
+    Light           Traffic.Control    Driver.Substance.Abuse
+ Length:186170      Length:186170      Length:186170         
+ Class :character   Class :character   Class :character      
+ Mode  :character   Mode  :character   Mode  :character      
+                                                             
+                                                             
+                                                             
+ Non.Motorist.Substance.Abuse  Person.ID         Driver.At.Fault   
+ Length:186170                Length:186170      Length:186170     
+ Class :character             Class :character   Class :character  
+ Mode  :character             Mode  :character   Mode  :character  
+                                                                   
+                                                                   
+                                                                   
+ Injury.Severity    Circumstance       Driver.Distracted.By
+ Length:186170      Length:186170      Length:186170       
+ Class :character   Class :character   Class :character    
+ Mode  :character   Mode  :character   Mode  :character    
+                                                           
+                                                           
+                                                           
+ Drivers.License.State  Vehicle.ID        Vehicle.Damage.Extent
+ Length:186170         Length:186170      Length:186170        
+ Class :character      Class :character   Class :character     
+ Mode  :character      Mode  :character   Mode  :character     
+                                                               
+                                                               
+                                                               
+ Vehicle.First.Impact.Location Vehicle.Body.Type  Vehicle.Movement  
+ Length:186170                 Length:186170      Length:186170     
+ Class :character              Class :character   Class :character  
+ Mode  :character              Mode  :character   Mode  :character  
+                                                                    
+                                                                    
+                                                                    
+ Vehicle.Going.Dir   Speed.Limit    Driverless.Vehicle Parked.Vehicle    
+ Length:186170      Min.   : 0.00   Length:186170      Length:186170     
+ Class :character   1st Qu.:25.00   Class :character   Class :character  
+ Mode  :character   Median :35.00   Mode  :character   Mode  :character  
+                    Mean   :32.41                                        
+                    3rd Qu.:40.00                                        
+                    Max.   :75.00                                        
+  Vehicle.Year  Vehicle.Make       Vehicle.Model         Latitude    
+ Min.   :   0   Length:186170      Length:186170      Min.   :37.72  
+ 1st Qu.:2006   Class :character   Class :character   1st Qu.:39.02  
+ Median :2012   Mode  :character   Mode  :character   Median :39.07  
+ Mean   :1966                                         Mean   :39.08  
+ 3rd Qu.:2016                                         3rd Qu.:39.14  
+ Max.   :9999                                         Max.   :39.99  
+   Longitude        Location        
+ Min.   :-79.49   Length:186170     
+ 1st Qu.:-77.19   Class :character  
+ Median :-77.11   Mode  :character  
+ Mean   :-77.11                     
+ 3rd Qu.:-77.04                     
+ Max.   :-75.53                     </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Option 2: Load the already cleaned data</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>clean_data <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"dataset"</span>, <span class="st">"cleaned_dataset_full.rds"</span>))</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Or load the exploration subset</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>subset_data <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"dataset"</span>, <span class="st">"cleaned_dataset.rds"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
-<section id="additional-packages" class="level3">
-<h3 class="anchored" data-anchor-id="additional-packages">Additional Packages</h3>
-</section>
-<section id="data-integration" class="level3">
-<h3 class="anchored" data-anchor-id="data-integration">Data Integration</h3>
-<hr>
-<p>This comes from the file <code>data.qmd</code>.</p>
-<p>Your first steps in this project will be to find data to work on.</p>
+<section id="cleaning-operations" class="level3">
+<h3 class="anchored" data-anchor-id="cleaning-operations">Cleaning Operations</h3>
+<p>Our cleaning script performs the following operations:</p>
+<ol type="1">
+<li>Removes columns with more than 80% missing values</li>
+<li>Converts the case number to proper character format</li>
+<li>Standardizes date/time formats using lubridate</li>
+<li>Handles missing values in the Route Type column</li>
+<li>Removes duplicate entries</li>
+</ol>
 <p>Initially, you will study <em>one dataset</em> but later you will need to combine that data with another dataset. For this reason, I recommend finding data that has some date and/or location components. These types of data are conducive to interesting visualizations and analysis and you can also combine this data with other data that also has a date or location variable. Data from the census, weather data, economic data, are all relatively easy to combine with other data with time/location components.</p>
-</section>
 </section>
 <section id="what-makes-a-good-data-set" class="level2">
 <h2 class="anchored" data-anchor-id="what-makes-a-good-data-set">What makes a good data set?</h2>
@@ -251,47 +410,129 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>For larger datasets, you’ll need to create a new folder in the project root directory named <code>dataset-ignore</code>. This will be ignored by git (based off the <code>.gitignore</code> file in the project root directory) which will help you avoid issues with Github’s size limits. Your team will have to manually make sure the data files in <code>dataset-ignore</code> are synced across team members.</p>
 <p>Your <a href="./scripts/load_and_clean_data.R">load_and_clean_data.R</a> file is how you will load and clean your data. Here is a an example of a very simple one.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">"scripts/load_and_clean_data.R"</span>,</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">echo =</span> <span class="cn">TRUE</span> <span class="co"># Use echo=FALSE or omit it to avoid code output  </span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">"scripts/load_and_clean_data.R"</span>,</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">echo =</span> <span class="cn">TRUE</span> <span class="co"># Use echo=FALSE or omit it to avoid code output  </span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
-&gt; library(tidyverse)</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
-✔ dplyr     1.1.4     ✔ readr     2.1.5
-✔ forcats   1.0.0     ✔ stringr   1.5.1
-✔ ggplot2   3.5.1     ✔ tibble    3.2.1
-✔ lubridate 1.9.3     ✔ tidyr     1.3.1
-✔ purrr     1.0.2     
-── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
-✖ dplyr::filter() masks stats::filter()
-✖ dplyr::lag()    masks stats::lag()
-ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-&gt; loan_data &lt;- read_csv(here::here("dataset", "loan_refusal.csv"))</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Rows: 20 Columns: 5
-── Column specification ────────────────────────────────────────────────────────
-Delimiter: ","
-chr (1): bank
-dbl (4): min, white, himin, hiwhite
+&gt; library(tidyverse)
 
-ℹ Use `spec()` to retrieve the full column specification for this data.
-ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-&gt; loan_data_clean &lt;- pivot_longer(loan_data, 2:5, names_to = "group", 
-+     values_to = "refusal_rate")
+&gt; library(lubridate)
 
-&gt; write_rds(loan_data_clean, file = here::here("dataset", 
-+     "loan_refusal_clean.rds"))</code></pre>
+&gt; library(skimr)
+
+&gt; library(here)
+
+&gt; crash_df &lt;- read.csv(here::here("dataset", "Crash_Reporting_-_Drivers_Data.csv"))
+
+&gt; threshold &lt;- 0.8
+
+&gt; data_clean &lt;- select_if(crash_df, ~mean(is.na(.)) &lt; 
++     threshold)
+
+&gt; data_clean &lt;- mutate(data_clean, Local.Case.Number = as.character(Local.Case.Number))
+
+&gt; data_clean &lt;- mutate(data_clean, Crash.Date.Time = mdy_hms(Crash.Date.Time))
+
+&gt; if ("Route_Type" %in% names(data_clean)) {
++     most_common_route &lt;- names(which.max(table(data_clean$Route_Type[!is.na(data_clean$Route_Type)])))
+ .... [TRUNCATED] 
+
+&gt; data_clean &lt;- distinct(data_clean)
+
+&gt; subset_data &lt;- slice(data_clean, 1:1000)
+
+&gt; saveRDS(data_clean, file = here::here("dataset", "cleaned_dataset_full.rds"))
+
+&gt; saveRDS(subset_data, file = here::here("dataset", 
++     "cleaned_dataset.rds"))
+
+&gt; summary(data_clean)
+ Report.Number      Local.Case.Number  Agency.Name        ACRS.Report.Type  
+ Length:186170      Length:186170      Length:186170      Length:186170     
+ Class :character   Class :character   Class :character   Class :character  
+ Mode  :character   Mode  :character   Mode  :character   Mode  :character  
+                                                                            
+                                                                            
+                                                                            
+ Crash.Date.Time                   Route.Type         Road.Name        
+ Min.   :2015-01-01 00:30:00.00   Length:186170      Length:186170     
+ 1st Qu.:2017-03-24 13:04:15.00   Class :character   Class :character  
+ Median :2019-05-31 15:20:00.00   Mode  :character   Mode  :character  
+ Mean   :2019-09-10 19:20:38.36                                        
+ 3rd Qu.:2022-04-03 06:38:15.00                                        
+ Max.   :2024-10-09 17:06:00.00                                        
+ Cross.Street.Name  Off.Road.Description Municipality      
+ Length:186170      Length:186170        Length:186170     
+ Class :character   Class :character     Class :character  
+ Mode  :character   Mode  :character     Mode  :character  
+                                                           
+                                                           
+                                                           
+ Related.Non.Motorist Collision.Type       Weather          Surface.Condition 
+ Length:186170        Length:186170      Length:186170      Length:186170     
+ Class :character     Class :character   Class :character   Class :character  
+ Mode  :character     Mode  :character   Mode  :character   Mode  :character  
+                                                                              
+                                                                              
+                                                                              
+    Light           Traffic.Control    Driver.Substance.Abuse
+ Length:186170      Length:186170      Length:186170         
+ Class :character   Class :character   Class :character      
+ Mode  :character   Mode  :character   Mode  :character      
+                                                             
+                                                             
+                                                             
+ Non.Motorist.Substance.Abuse  Person.ID         Driver.At.Fault   
+ Length:186170                Length:186170      Length:186170     
+ Class :character             Class :character   Class :character  
+ Mode  :character             Mode  :character   Mode  :character  
+                                                                   
+                                                                   
+                                                                   
+ Injury.Severity    Circumstance       Driver.Distracted.By
+ Length:186170      Length:186170      Length:186170       
+ Class :character   Class :character   Class :character    
+ Mode  :character   Mode  :character   Mode  :character    
+                                                           
+                                                           
+                                                           
+ Drivers.License.State  Vehicle.ID        Vehicle.Damage.Extent
+ Length:186170         Length:186170      Length:186170        
+ Class :character      Class :character   Class :character     
+ Mode  :character      Mode  :character   Mode  :character     
+                                                               
+                                                               
+                                                               
+ Vehicle.First.Impact.Location Vehicle.Body.Type  Vehicle.Movement  
+ Length:186170                 Length:186170      Length:186170     
+ Class :character              Class :character   Class :character  
+ Mode  :character              Mode  :character   Mode  :character  
+                                                                    
+                                                                    
+                                                                    
+ Vehicle.Going.Dir   Speed.Limit    Driverless.Vehicle Parked.Vehicle    
+ Length:186170      Min.   : 0.00   Length:186170      Length:186170     
+ Class :character   1st Qu.:25.00   Class :character   Class :character  
+ Mode  :character   Median :35.00   Mode  :character   Mode  :character  
+                    Mean   :32.41                                        
+                    3rd Qu.:40.00                                        
+                    Max.   :75.00                                        
+  Vehicle.Year  Vehicle.Make       Vehicle.Model         Latitude    
+ Min.   :   0   Length:186170      Length:186170      Min.   :37.72  
+ 1st Qu.:2006   Class :character   Class :character   1st Qu.:39.02  
+ Median :2012   Mode  :character   Mode  :character   Median :39.07  
+ Mean   :1966                                         Mean   :39.08  
+ 3rd Qu.:2016                                         3rd Qu.:39.14  
+ Max.   :9999                                         Max.   :39.99  
+   Longitude        Location        
+ Min.   :-79.49   Length:186170     
+ 1st Qu.:-77.19   Class :character  
+ Median :-77.11   Mode  :character  
+ Mean   :-77.11                     
+ 3rd Qu.:-77.04                     
+ Max.   :-75.53                     </code></pre>
 </div>
 </div>
 <p>You should never use absolute paths (eg. <code>/Users/danielsussman/path/to/project/</code> or <code>C:\MA415\\Final_Project\</code>).</p>
@@ -332,6 +573,7 @@ dbl (4): min, white, himin, hiwhite
 </ul>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
