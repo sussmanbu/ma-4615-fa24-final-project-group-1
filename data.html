@@ -237,151 +237,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>The script can be run in two ways:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Option 1: Source directly in your Quarto document</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"scripts"</span>, <span class="st">"load_and_clean_data.R"</span>), <span class="at">echo =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-&gt; library(tidyverse)</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
-✔ dplyr     1.1.4     ✔ readr     2.1.5
-✔ forcats   1.0.0     ✔ stringr   1.5.1
-✔ ggplot2   3.5.1     ✔ tibble    3.2.1
-✔ lubridate 1.9.3     ✔ tidyr     1.3.1
-✔ purrr     1.0.2     
-── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
-✖ dplyr::filter() masks stats::filter()
-✖ dplyr::lag()    masks stats::lag()
-ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-&gt; library(lubridate)
-
-&gt; library(skimr)
-
-&gt; library(here)</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>here() starts at /Users/xfu/ma415-project</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-&gt; crash_df &lt;- read.csv(here::here("dataset", "Crash_Reporting_-_Drivers_Data.csv"))
-
-&gt; threshold &lt;- 0.8
-
-&gt; data_clean &lt;- select_if(crash_df, ~mean(is.na(.)) &lt; 
-+     threshold)
-
-&gt; data_clean &lt;- mutate(data_clean, Local.Case.Number = as.character(Local.Case.Number))
-
-&gt; data_clean &lt;- mutate(data_clean, Crash.Date.Time = mdy_hms(Crash.Date.Time))
-
-&gt; if ("Route_Type" %in% names(data_clean)) {
-+     most_common_route &lt;- names(which.max(table(data_clean$Route_Type[!is.na(data_clean$Route_Type)])))
- .... [TRUNCATED] 
-
-&gt; data_clean &lt;- distinct(data_clean)
-
-&gt; subset_data &lt;- slice(data_clean, 1:1000)
-
-&gt; saveRDS(data_clean, file = here::here("dataset", "cleaned_dataset_full.rds"))
-
-&gt; saveRDS(subset_data, file = here::here("dataset", 
-+     "cleaned_dataset.rds"))
-
-&gt; summary(data_clean)
- Report.Number      Local.Case.Number  Agency.Name        ACRS.Report.Type  
- Length:186170      Length:186170      Length:186170      Length:186170     
- Class :character   Class :character   Class :character   Class :character  
- Mode  :character   Mode  :character   Mode  :character   Mode  :character  
-                                                                            
-                                                                            
-                                                                            
- Crash.Date.Time                   Route.Type         Road.Name        
- Min.   :2015-01-01 00:30:00.00   Length:186170      Length:186170     
- 1st Qu.:2017-03-24 13:04:15.00   Class :character   Class :character  
- Median :2019-05-31 15:20:00.00   Mode  :character   Mode  :character  
- Mean   :2019-09-10 19:20:38.36                                        
- 3rd Qu.:2022-04-03 06:38:15.00                                        
- Max.   :2024-10-09 17:06:00.00                                        
- Cross.Street.Name  Off.Road.Description Municipality      
- Length:186170      Length:186170        Length:186170     
- Class :character   Class :character     Class :character  
- Mode  :character   Mode  :character     Mode  :character  
-                                                           
-                                                           
-                                                           
- Related.Non.Motorist Collision.Type       Weather          Surface.Condition 
- Length:186170        Length:186170      Length:186170      Length:186170     
- Class :character     Class :character   Class :character   Class :character  
- Mode  :character     Mode  :character   Mode  :character   Mode  :character  
-                                                                              
-                                                                              
-                                                                              
-    Light           Traffic.Control    Driver.Substance.Abuse
- Length:186170      Length:186170      Length:186170         
- Class :character   Class :character   Class :character      
- Mode  :character   Mode  :character   Mode  :character      
-                                                             
-                                                             
-                                                             
- Non.Motorist.Substance.Abuse  Person.ID         Driver.At.Fault   
- Length:186170                Length:186170      Length:186170     
- Class :character             Class :character   Class :character  
- Mode  :character             Mode  :character   Mode  :character  
-                                                                   
-                                                                   
-                                                                   
- Injury.Severity    Circumstance       Driver.Distracted.By
- Length:186170      Length:186170      Length:186170       
- Class :character   Class :character   Class :character    
- Mode  :character   Mode  :character   Mode  :character    
-                                                           
-                                                           
-                                                           
- Drivers.License.State  Vehicle.ID        Vehicle.Damage.Extent
- Length:186170         Length:186170      Length:186170        
- Class :character      Class :character   Class :character     
- Mode  :character      Mode  :character   Mode  :character     
-                                                               
-                                                               
-                                                               
- Vehicle.First.Impact.Location Vehicle.Body.Type  Vehicle.Movement  
- Length:186170                 Length:186170      Length:186170     
- Class :character              Class :character   Class :character  
- Mode  :character              Mode  :character   Mode  :character  
-                                                                    
-                                                                    
-                                                                    
- Vehicle.Going.Dir   Speed.Limit    Driverless.Vehicle Parked.Vehicle    
- Length:186170      Min.   : 0.00   Length:186170      Length:186170     
- Class :character   1st Qu.:25.00   Class :character   Class :character  
- Mode  :character   Median :35.00   Mode  :character   Mode  :character  
-                    Mean   :32.41                                        
-                    3rd Qu.:40.00                                        
-                    Max.   :75.00                                        
-  Vehicle.Year  Vehicle.Make       Vehicle.Model         Latitude    
- Min.   :   0   Length:186170      Length:186170      Min.   :37.72  
- 1st Qu.:2006   Class :character   Class :character   1st Qu.:39.02  
- Median :2012   Mode  :character   Mode  :character   Median :39.07  
- Mean   :1966                                         Mean   :39.08  
- 3rd Qu.:2016                                         3rd Qu.:39.14  
- Max.   :9999                                         Max.   :39.99  
-   Longitude        Location        
- Min.   :-79.49   Length:186170     
- 1st Qu.:-77.19   Class :character  
- Median :-77.11   Mode  :character  
- Mean   :-77.11                     
- 3rd Qu.:-77.04                     
- Max.   :-75.53                     </code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Option 2: Load the already cleaned data</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>clean_data <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"dataset"</span>, <span class="st">"cleaned_dataset_full.rds"</span>))</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Or load the exploration subset</span></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>subset_data <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"dataset"</span>, <span class="st">"cleaned_dataset.rds"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"scripts"</span>, <span class="st">"load_and_clean_data.R"</span>), <span class="at">echo =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Option 2: Load the already cleaned data</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>clean_data <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"dataset"</span>, <span class="st">"cleaned_dataset_full.rds"</span>))</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Or load the exploration subset</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>subset_data <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"dataset"</span>, <span class="st">"cleaned_dataset.rds"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="cleaning-operations" class="level3">
@@ -417,10 +279,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>For larger datasets, you’ll need to create a new folder in the project root directory named <code>dataset-ignore</code>. This will be ignored by git (based off the <code>.gitignore</code> file in the project root directory) which will help you avoid issues with Github’s size limits. Your team will have to manually make sure the data files in <code>dataset-ignore</code> are synced across team members.</p>
 <p>Your <a href="./scripts/load_and_clean_data.R">load_and_clean_data.R</a> file is how you will load and clean your data. Here is a an example of a very simple one.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">"scripts/load_and_clean_data.R"</span>,</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">echo =</span> <span class="cn">TRUE</span> <span class="co"># Use echo=FALSE or omit it to avoid code output  </span></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">"scripts/load_and_clean_data.R"</span>,</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">echo =</span> <span class="cn">TRUE</span> <span class="co"># Use echo=FALSE or omit it to avoid code output  </span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 &gt; library(tidyverse)
