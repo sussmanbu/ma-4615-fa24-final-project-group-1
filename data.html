@@ -159,6 +159,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#key-variables" id="toc-key-variables" class="nav-link" data-scroll-target="#key-variables">Key Variables</a></li>
   </ul></li>
+  <li><a href="#additional-data-sources" id="toc-additional-data-sources" class="nav-link" data-scroll-target="#additional-data-sources">Additional Data Sources</a>
+  <ul class="collapse">
+  <li><a href="#pavement-condition-index" id="toc-pavement-condition-index" class="nav-link" data-scroll-target="#pavement-condition-index">Pavement Condition Index</a>
+  <ul class="collapse">
+  <li><a href="#data-files-and-variables" id="toc-data-files-and-variables" class="nav-link" data-scroll-target="#data-files-and-variables">Data Files and Variables</a></li>
+  <li><a href="#access-and-use-information" id="toc-access-and-use-information" class="nav-link" data-scroll-target="#access-and-use-information">Access and Use Information</a></li>
+  <li><a href="#additional-notes" id="toc-additional-notes" class="nav-link" data-scroll-target="#additional-notes">Additional Notes:</a></li>
+  </ul></li>
+  </ul></li>
   <li><a href="#data-cleaning-process" id="toc-data-cleaning-process" class="nav-link" data-scroll-target="#data-cleaning-process">Data Cleaning Process</a>
   <ul class="collapse">
   <li><a href="#setup-and-requirements" id="toc-setup-and-requirements" class="nav-link" data-scroll-target="#setup-and-requirements">Setup and Requirements</a></li>
@@ -202,8 +211,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="primary-data-source" class="level2">
-<h2 class="anchored" data-anchor-id="primary-data-source">Primary Data Source</h2>
+<section id="primary-data-source" class="level1">
+<h1>Primary Data Source</h1>
 <p>The primary dataset used in this analysis comes from Montgomery County, Maryland’s open data portal, specifically the “Crash Reporting - Drivers Data” dataset. This dataset is publicly available and can be accessed at <a href="https://data.montgomerycountymd.gov/Public-Safety/Crash-Reporting-Drivers-Data/mmzv-x632">Montgomery County’s Data Portal</a>. The data is collected through the Automated Crash Reporting System (ACRS) of the Maryland State Police and includes reports from multiple law enforcement agencies: Montgomery County Police, Gaithersburg Police, Rockville Police, and the Maryland-National Capital Park Police.</p>
 <p>The dataset was created and is maintained as part of Montgomery County’s commitment to public safety and transparency, particularly in support of their Vision Zero initiative (as indicated by the dataset’s keywords). Vision Zero is a strategy to eliminate all traffic fatalities and severe injuries while increasing safe, healthy, equitable mobility for all.</p>
 <p>The data collection serves multiple purposes:</p>
@@ -222,6 +231,73 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Driver Details: Driver At Fault, Injury Severity, Driver Substance Abuse, Driver Distracted By</li>
 <li>Vehicle Information: Vehicle Make, Model, Year, Body Type, Damage Extent</li>
 </ul>
+</section>
+</section>
+<section id="additional-data-sources" class="level1">
+<h1>Additional Data Sources</h1>
+<section id="pavement-condition-index" class="level2">
+<h2 class="anchored" data-anchor-id="pavement-condition-index">Pavement Condition Index</h2>
+<p>The dataset, titled <strong>Pavement Condition Index</strong>, is provided by the <strong>Department of Transportation of Montgomery County, Maryland</strong>, and can be accessed through the Montgomery County open data portal at <a href="https://data.montgomerycountymd.gov">data.montgomerycountymd.gov</a>. This dataset was created to analyze and report on the conditions of pavements across the county’s roadways.</p>
+<ul>
+<li><strong>Purpose of Collection</strong>:
+<ul>
+<li>To evaluate and monitor the pavement condition of all 5,200 lane miles of roadways in Montgomery County.</li>
+<li>Support county transportation planning and maintenance activities by providing numerical condition scores.</li>
+</ul></li>
+<li><strong>Attribution</strong>:
+<ul>
+<li>Collected and curated by the Montgomery County Department of Transportation.</li>
+<li>Maintained and updated biennially with metadata recently updated on <strong>June 11, 2023</strong>.</li>
+</ul></li>
+</ul>
+<section id="data-files-and-variables" class="level3">
+<h3 class="anchored" data-anchor-id="data-files-and-variables">Data Files and Variables</h3>
+<p>The dataset includes the following variables, which provide details about pavement conditions. The most relevant variables are highlighted below:</p>
+<section id="key-variables-1" class="level4">
+<h4 class="anchored" data-anchor-id="key-variables-1">Key Variables:</h4>
+<ul>
+<li><strong>Pavement Condition Index (PCI)</strong>:
+<ul>
+<li>A numerical score between 1 and 100, representing the condition of the pavement.</li>
+<li><strong>Score Categories</strong>:
+<ul>
+<li><strong>0-30</strong>: Poor condition.</li>
+<li><strong>31-60</strong>: Fair condition.</li>
+<li><strong>61-80</strong>: Good condition.</li>
+<li><strong>81-100</strong>: Very good condition.</li>
+</ul></li>
+</ul></li>
+<li><strong>Pavement Distress Types</strong>:
+<ul>
+<li>Includes 19 types of distresses, such as cracking, potholes, environmental impacts, and utility cuts.</li>
+</ul></li>
+</ul>
+</section>
+<section id="additional-variables-summarized" class="level4">
+<h4 class="anchored" data-anchor-id="additional-variables-summarized">Additional Variables (Summarized):</h4>
+<ul>
+<li><strong>Roadway ID</strong>: Unique identifier for each roadway segment.</li>
+<li><strong>Street Name</strong>: Name of the street being evaluated.</li>
+<li><strong>Segment Length</strong>: Length of the road segment in miles.</li>
+<li><strong>Last Inspected Date</strong>: Date of the most recent condition assessment.</li>
+<li><strong>Road Category</strong>: Classifies roads (e.g., arterial, residential).</li>
+</ul>
+</section>
+</section>
+<section id="access-and-use-information" class="level3">
+<h3 class="anchored" data-anchor-id="access-and-use-information">Access and Use Information</h3>
+<ul>
+<li>The dataset is publicly available and intended for use by the general public, researchers, and policymakers.</li>
+<li>It is categorized as <strong>Non-Federal</strong>, with no specific license provided.</li>
+</ul>
+</section>
+<section id="additional-notes" class="level3">
+<h3 class="anchored" data-anchor-id="additional-notes">Additional Notes:</h3>
+<ul>
+<li><strong>Update Frequency</strong>: The dataset is updated every two years to reflect changes in pavement conditions.</li>
+<li><strong>Limitations</strong>: The dataset does not include real-time updates or historical comparisons across multiple update cycles.</li>
+</ul>
+</section>
 </section>
 </section>
 <section id="data-cleaning-process" class="level1">
