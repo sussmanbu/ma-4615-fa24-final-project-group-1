@@ -165,7 +165,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#data-files-and-variables" id="toc-data-files-and-variables" class="nav-link" data-scroll-target="#data-files-and-variables">Data Files and Variables</a></li>
   <li><a href="#access-and-use-information" id="toc-access-and-use-information" class="nav-link" data-scroll-target="#access-and-use-information">Access and Use Information</a></li>
-  <li><a href="#additional-notes" id="toc-additional-notes" class="nav-link" data-scroll-target="#additional-notes">Additional Notes:</a></li>
+  <li><a href="#additional-notes" id="toc-additional-notes" class="nav-link" data-scroll-target="#additional-notes">Additional Notes</a></li>
   </ul></li>
   </ul></li>
   <li><a href="#data-cleaning-process" id="toc-data-cleaning-process" class="nav-link" data-scroll-target="#data-cleaning-process">Data Cleaning Process</a>
@@ -239,12 +239,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="pavement-condition-index">Pavement Condition Index</h2>
 <p>The dataset, titled <strong>Pavement Condition Index</strong>, is provided by the <strong>Department of Transportation of Montgomery County, Maryland</strong>, and can be accessed through the Montgomery County open data portal at <a href="https://data.montgomerycountymd.gov">data.montgomerycountymd.gov</a>. This dataset was created to analyze and report on the conditions of pavements across the county’s roadways.</p>
 <ul>
-<li><strong>Purpose of Collection</strong>:
+<li><strong>Purpose of Collection</strong>
 <ul>
 <li>To evaluate and monitor the pavement condition of all 5,200 lane miles of roadways in Montgomery County.</li>
 <li>Support county transportation planning and maintenance activities by providing numerical condition scores.</li>
 </ul></li>
-<li><strong>Attribution</strong>:
+<li><strong>Attribution</strong>
 <ul>
 <li>Collected and curated by the Montgomery County Department of Transportation.</li>
 <li>Maintained and updated biennially with metadata recently updated on <strong>June 11, 2023</strong>.</li>
@@ -254,7 +254,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="data-files-and-variables">Data Files and Variables</h3>
 <p>The dataset includes the following variables, which provide details about pavement conditions. The most relevant variables are highlighted below:</p>
 <section id="key-variables-1" class="level4">
-<h4 class="anchored" data-anchor-id="key-variables-1">Key Variables:</h4>
+<h4 class="anchored" data-anchor-id="key-variables-1">Key Variables</h4>
 <ul>
 <li><strong>Pavement Condition Index (PCI)</strong>:
 <ul>
@@ -292,7 +292,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 </section>
 <section id="additional-notes" class="level3">
-<h3 class="anchored" data-anchor-id="additional-notes">Additional Notes:</h3>
+<h3 class="anchored" data-anchor-id="additional-notes">Additional Notes</h3>
 <ul>
 <li><strong>Update Frequency</strong>: The dataset is updated every two years to reflect changes in pavement conditions.</li>
 <li><strong>Limitations</strong>: The dataset does not include real-time updates or historical comparisons across multiple update cycles.</li>
@@ -302,7 +302,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="data-cleaning-process" class="level1">
 <h1>Data Cleaning Process</h1>
-<p>Our data cleaning process is implemented in our <a href="./scripts/load_and_clean_data.R">load_and_clean_data.R</a> script. Here’s how to use it and what it does:</p>
+<p>Our data cleaning process is implemented in our <a href=".\scripts/load_and_clean_data.R">load_and_clean_data.R</a> script. Here’s how to use it and what it does:</p>
 <section id="setup-and-requirements" class="level3">
 <h3 class="anchored" data-anchor-id="setup-and-requirements">Setup and Requirements</h3>
 <p>First, ensure you have all required packages installed:</p>
@@ -353,7 +353,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>For small datasets (&lt;50mb), you can use the <code>dataset</code> folder that is tracked by github. Add the files just like you would any other file.</p>
 <p>If you create a folder named <code>data</code> this will cause problems.</p>
 <p>For larger datasets, you’ll need to create a new folder in the project root directory named <code>dataset-ignore</code>. This will be ignored by git (based off the <code>.gitignore</code> file in the project root directory) which will help you avoid issues with Github’s size limits. Your team will have to manually make sure the data files in <code>dataset-ignore</code> are synced across team members.</p>
-<p>Your <a href="./scripts/load_and_clean_data.R">load_and_clean_data.R</a> file is how you will load and clean your data. Here is a an example of a very simple one.</p>
+<p>Your <a href=".\scripts/load_and_clean_data.R">load_and_clean_data.R</a> file is how you will load and clean your data. Here is a an example of a very simple one.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">"scripts/load_and_clean_data.R"</span>,</span>
@@ -485,7 +485,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="load-and-clean-data-script" class="level3">
 <h3 class="anchored" data-anchor-id="load-and-clean-data-script">Load and clean data script</h3>
-<p>The idea behind this file is that someone coming to your website could largely replicate your analyses after running this script on the original data sets to clean them. This file might create a derivative data set that you then use for your subsequent analysis. Note that you don’t need to run this script from every post/page. Instead, you can load in the results of this script, which could be plain text files or <code>.RData</code> files. In your data page you’ll describe how these results were created. If you have a very large data set, you might save smaller data sets that you can use for exploration purposes. To link to this file, you can use <code>[cleaning script](/scripts/load_and_clean_data.R)</code> wich appears as <a href="./scripts/load_and_clean_data.R">cleaning script</a>.</p>
+<p>The idea behind this file is that someone coming to your website could largely replicate your analyses after running this script on the original data sets to clean them. This file might create a derivative data set that you then use for your subsequent analysis. Note that you don’t need to run this script from every post/page. Instead, you can load in the results of this script, which could be plain text files or <code>.RData</code> files. In your data page you’ll describe how these results were created. If you have a very large data set, you might save smaller data sets that you can use for exploration purposes. To link to this file, you can use <code>[cleaning script](/scripts/load_and_clean_data.R)</code> wich appears as <a href=".\scripts/load_and_clean_data.R">cleaning script</a>.</p>
 <hr>
 </section>
 </section>
