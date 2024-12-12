@@ -167,17 +167,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#access-and-use-information" id="toc-access-and-use-information" class="nav-link" data-scroll-target="#access-and-use-information">Access and Use Information</a></li>
   <li><a href="#additional-notes" id="toc-additional-notes" class="nav-link" data-scroll-target="#additional-notes">Additional Notes</a></li>
   </ul></li>
+  <li><a href="#maryland-highway-mileage-reports" id="toc-maryland-highway-mileage-reports" class="nav-link" data-scroll-target="#maryland-highway-mileage-reports">Maryland Highway Mileage Reports</a>
+  <ul class="collapse">
+  <li><a href="#data-files-and-variables-1" id="toc-data-files-and-variables-1" class="nav-link" data-scroll-target="#data-files-and-variables-1">Data Files and Variables</a></li>
+  <li><a href="#access-and-use-information-1" id="toc-access-and-use-information-1" class="nav-link" data-scroll-target="#access-and-use-information-1">Access and Use Information</a></li>
+  <li><a href="#additional-notes-1" id="toc-additional-notes-1" class="nav-link" data-scroll-target="#additional-notes-1">Additional Notes</a></li>
+  </ul></li>
+  <li><a href="#montgomery-county-crime-dataset" id="toc-montgomery-county-crime-dataset" class="nav-link" data-scroll-target="#montgomery-county-crime-dataset">Montgomery County Crime Dataset</a>
+  <ul class="collapse">
+  <li><a href="#data-files-and-variables-2" id="toc-data-files-and-variables-2" class="nav-link" data-scroll-target="#data-files-and-variables-2">Data Files and Variables</a></li>
+  <li><a href="#access-and-use-information-2" id="toc-access-and-use-information-2" class="nav-link" data-scroll-target="#access-and-use-information-2">Access and Use Information</a></li>
+  <li><a href="#additional-notes-2" id="toc-additional-notes-2" class="nav-link" data-scroll-target="#additional-notes-2">Additional Notes</a></li>
   </ul></li>
   <li><a href="#data-cleaning-process" id="toc-data-cleaning-process" class="nav-link" data-scroll-target="#data-cleaning-process">Data Cleaning Process</a>
   <ul class="collapse">
   <li><a href="#setup-and-requirements" id="toc-setup-and-requirements" class="nav-link" data-scroll-target="#setup-and-requirements">Setup and Requirements</a></li>
   <li><a href="#running-the-cleaning-script" id="toc-running-the-cleaning-script" class="nav-link" data-scroll-target="#running-the-cleaning-script">Running the Cleaning Script</a></li>
   <li><a href="#cleaning-operations" id="toc-cleaning-operations" class="nav-link" data-scroll-target="#cleaning-operations">Cleaning Operations</a></li>
-  <li><a href="#what-makes-a-good-data-set" id="toc-what-makes-a-good-data-set" class="nav-link" data-scroll-target="#what-makes-a-good-data-set">What makes a good data set?</a></li>
-  <li><a href="#where-to-keep-data" id="toc-where-to-keep-data" class="nav-link" data-scroll-target="#where-to-keep-data">Where to keep data?</a>
-  <ul class="collapse">
-  <li><a href="#sharing-your-data" id="toc-sharing-your-data" class="nav-link" data-scroll-target="#sharing-your-data">Sharing your data</a></li>
-  <li><a href="#load-and-clean-data-script" id="toc-load-and-clean-data-script" class="nav-link" data-scroll-target="#load-and-clean-data-script">Load and clean data script</a></li>
   </ul></li>
   <li><a href="#rubric-on-this-page" id="toc-rubric-on-this-page" class="nav-link" data-scroll-target="#rubric-on-this-page">Rubric: On this page</a></li>
   </ul></li>
@@ -299,10 +305,105 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 </section>
 </section>
+<section id="maryland-highway-mileage-reports" class="level2">
+<h2 class="anchored" data-anchor-id="maryland-highway-mileage-reports">Maryland Highway Mileage Reports</h2>
+<p>The dataset, titled <strong>Annual Highway Mileage Reports</strong>, is provided by the <strong>Maryland Department of Transportation State Highway Administration (MDOT SHA)</strong>. This dataset combines comprehensive information about state, toll, county, and municipal roadway systems in Montgomery County, Maryland, focusing on three key report types: DSD9 (Detailed Surface Data), FCAVMT (Functional Class Annual Vehicle Miles Traveled), and FCMI (Functional Class Mileage Information) from 2017 to 2022.</p>
+<ul>
+<li><strong>Purpose of Collection</strong>
+<ul>
+<li>To track and analyze highway infrastructure across different functional classifications in Montgomery County.</li>
+<li>Support transportation planning and policy decisions by providing detailed metrics on road usage and capacity.</li>
+<li>Monitor changes in road infrastructure and vehicle miles traveled over time.</li>
+</ul></li>
+<li><strong>Attribution</strong>
+<ul>
+<li>Collected and maintained by the Maryland Department of Transportation State Highway Administration.</li>
+<li>Represents official state records of highway infrastructure and usage.</li>
+</ul></li>
+</ul>
+<section id="data-files-and-variables-1" class="level3">
+<h3 class="anchored" data-anchor-id="data-files-and-variables-1">Data Files and Variables</h3>
+<p>The dataset combines three main report types, each providing distinct insights into the county’s highway system:</p>
+<section id="key-components" class="level4">
+<h4 class="anchored" data-anchor-id="key-components">Key Components</h4>
+<ul>
+<li><strong>DSD9 (Detailed Surface Data)</strong>:
+<ul>
+<li>Mainline mileage (total, divided, non-divided)</li>
+<li>Annual vehicle miles</li>
+<li>Lane mileage (auxiliary spurs, mainline, total)</li>
+<li>Square yards of surfacing</li>
+</ul></li>
+<li><strong>FCAVMT (Functional Class Annual Vehicle Miles Traveled)</strong>:
+<ul>
+<li>Tracks vehicle miles traveled across different road classifications</li>
+<li>Separates data into rural and urban categories</li>
+<li>Includes various road types from Interstate to Local roads</li>
+</ul></li>
+<li><strong>FCMI (Functional Class Mileage Information)</strong>:
+<ul>
+<li>Documents road mileage by functional classification</li>
+<li>Covers both rural and urban road networks</li>
+<li>Categorizes roads from Interstate to Local systems</li>
+</ul></li>
+</ul>
 </section>
-<section id="data-cleaning-process" class="level1">
-<h1>Data Cleaning Process</h1>
-<p>Our data cleaning process is implemented in our <a href=".\scripts/load_and_clean_data.R">load_and_clean_data.R</a> script. Here’s how to use it and what it does:</p>
+<section id="classification-variables" class="level4">
+<h4 class="anchored" data-anchor-id="classification-variables">Classification Variables</h4>
+<ul>
+<li><strong>Road Categories</strong>:
+<ul>
+<li>Interstate</li>
+<li>Other Freeways</li>
+<li>Principal Arterial</li>
+<li>Minor Arterial</li>
+<li>Major Collector</li>
+<li>Minor Collector</li>
+<li>Local Roads</li>
+</ul></li>
+</ul>
+<p>Each category is further subdivided into rural and urban designations.</p>
+</section>
+</section>
+<section id="access-and-use-information-1" class="level3">
+<h3 class="anchored" data-anchor-id="access-and-use-information-1">Access and Use Information</h3>
+<ul>
+<li>The dataset represents official state records and is used for planning and administrative purposes.</li>
+<li>Data is structured to support analysis of transportation infrastructure trends from 2017 to 2022.</li>
+</ul>
+</section>
+<section id="additional-notes-1" class="level3">
+<h3 class="anchored" data-anchor-id="additional-notes-1">Additional Notes</h3>
+<ul>
+<li><strong>Time Coverage</strong>: The dataset spans six years (2017-2022), providing recent historical context.</li>
+<li><strong>Geographical Scope</strong>: Focuses specifically on Montgomery County, Maryland.</li>
+<li><strong>Integration</strong>: Combines three distinct report types to provide a comprehensive view of the county’s highway system.</li>
+<li><strong>Limitations</strong>: Earlier years may have fewer data categories as reporting requirements expanded over time.</li>
+</ul>
+</section>
+</section>
+<section id="montgomery-county-crime-dataset" class="level2">
+<h2 class="anchored" data-anchor-id="montgomery-county-crime-dataset">Montgomery County Crime Dataset</h2>
+<p>The dataset, titled <strong>Crime</strong>, is provided by the <strong>Montgomery County Police Department</strong> and can be accessed through Montgomery County’s open data portal at dataMontgomery. This dataset contains detailed crime statistics and incident reports, utilizing the National Incident-Based Reporting System (NIBRS) classification standards.</p>
+<p>The primary purpose of this dataset is to provide public access to comprehensive crime statistics in Montgomery County, supporting law enforcement analysis and transparency initiatives while enabling data-driven policy decisions regarding public safety. The data is collected and maintained by the Montgomery County Police Department and compiled using the EJustice records-management system. The data is updated daily, with metadata last updated on December 7, 2024.</p>
+<section id="data-files-and-variables-2" class="level3">
+<h3 class="anchored" data-anchor-id="data-files-and-variables-2">Data Files and Variables</h3>
+<p>The dataset includes detailed information about reported crimes through various key components. The incident information includes unique identifiers such as Incident ID and CR Number, along with temporal data including dispatch date/time, and start and end date/time. Each incident is classified using NIBRS codes and can include up to three crime name categories per incident, along with offense codes and the number of victims involved.</p>
+<p>Location data is extensively documented, including police district name and number, detailed block address components, city, state, and zip code information. Geographic coordinates are provided through latitude and longitude, and law enforcement jurisdictional information is included through sector, beat, and PRA designations.</p>
+</section>
+<section id="access-and-use-information-2" class="level3">
+<h3 class="anchored" data-anchor-id="access-and-use-information-2">Access and Use Information</h3>
+<p>The dataset is made available to the public through multiple format options, including CSV, RDF/XML, JSON, and XML. The data coverage begins from July 1st, 2016, and can be accessed through the Montgomery County open data portal. To maintain privacy standards, all personal information is excluded from the public dataset to protect victims’ privacy.</p>
+</section>
+<section id="additional-notes-2" class="level3">
+<h3 class="anchored" data-anchor-id="additional-notes-2">Additional Notes</h3>
+<p>The dataset is updated daily, with quarterly refreshes to reflect any changes in investigation status. Users should be aware of several important limitations: the information may be preliminary and subject to change, incidents may include attempted crimes alongside completed ones, and crime classifications may be updated as investigations progress. The data may contain mechanical or human errors, and while arrest information is included, all arrested persons are presumed innocent until proven guilty in a court of law.</p>
+<p>This comprehensive dataset serves as a valuable resource for understanding crime patterns and law enforcement activities in Montgomery County, while maintaining appropriate privacy protections and data quality standards. The frequent updates and multiple format options make it a useful tool for researchers, policy makers, and the general public interested in local crime statistics and trends.</p>
+</section>
+</section>
+<section id="data-cleaning-process" class="level2">
+<h2 class="anchored" data-anchor-id="data-cleaning-process">Data Cleaning Process</h2>
+<p>Our data cleaning process is implemented in our <a href="./scripts/load_and_clean_data.R">load_and_clean_data.R</a> script. Here’s how to use it and what it does:</p>
 <section id="setup-and-requirements" class="level3">
 <h3 class="anchored" data-anchor-id="setup-and-requirements">Setup and Requirements</h3>
 <p>First, ensure you have all required packages installed:</p>
@@ -332,188 +433,33 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Handles missing values in the Route Type column</li>
 <li>Removes duplicate entries</li>
 </ol>
-<p>Initially, you will study <em>one dataset</em> but later you will need to combine that data with another dataset. For this reason, I recommend finding data that has some date and/or location components. These types of data are conducive to interesting visualizations and analysis and you can also combine this data with other data that also has a date or location variable. Data from the census, weather data, economic data, are all relatively easy to combine with other data with time/location components.</p>
-</section>
-<section id="what-makes-a-good-data-set" class="level2">
-<h2 class="anchored" data-anchor-id="what-makes-a-good-data-set">What makes a good data set?</h2>
-<ul>
-<li>Data you are interested in and care about.</li>
-<li>Data where there are a lot of potential questions that you can explore.</li>
-<li>A data set that isn’t completely cleaned already.</li>
-<li>Multiple sources for data that you can combine.</li>
-<li>Some type of time and/or location component.</li>
-</ul>
-</section>
-<section id="where-to-keep-data" class="level2">
-<h2 class="anchored" data-anchor-id="where-to-keep-data">Where to keep data?</h2>
-<p>Below 50mb: In <code>dataset</code> folder</p>
-<p>Above 50mb: In <code>dataset_ignore</code> folder. This folder will be ignored by <code>git</code> so you’ll have to manually sync these files across your team.</p>
-<section id="sharing-your-data" class="level3">
-<h3 class="anchored" data-anchor-id="sharing-your-data">Sharing your data</h3>
-<p>For small datasets (&lt;50mb), you can use the <code>dataset</code> folder that is tracked by github. Add the files just like you would any other file.</p>
-<p>If you create a folder named <code>data</code> this will cause problems.</p>
-<p>For larger datasets, you’ll need to create a new folder in the project root directory named <code>dataset-ignore</code>. This will be ignored by git (based off the <code>.gitignore</code> file in the project root directory) which will help you avoid issues with Github’s size limits. Your team will have to manually make sure the data files in <code>dataset-ignore</code> are synced across team members.</p>
-<p>Your <a href=".\scripts/load_and_clean_data.R">load_and_clean_data.R</a> file is how you will load and clean your data. Here is a an example of a very simple one.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">"scripts/load_and_clean_data.R"</span>,</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">echo =</span> <span class="cn">TRUE</span> <span class="co"># Use echo=FALSE or omit it to avoid code output  </span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-&gt; library(tidyverse)
-
-&gt; library(lubridate)
-
-&gt; library(skimr)
-
-&gt; library(here)
-
-&gt; crash_df &lt;- read.csv(here::here("dataset", "Crash_Reporting_-_Drivers_Data.csv"))
-
-&gt; threshold &lt;- 0.8
-
-&gt; data_clean &lt;- select_if(crash_df, ~mean(is.na(.)) &lt; 
-+     threshold)
-
-&gt; data_clean &lt;- mutate(data_clean, Local.Case.Number = as.character(Local.Case.Number))
-
-&gt; data_clean &lt;- mutate(data_clean, Crash.Date.Time = mdy_hms(Crash.Date.Time))
-
-&gt; if ("Route_Type" %in% names(data_clean)) {
-+     most_common_route &lt;- names(which.max(table(data_clean$Route_Type[!is.na(data_clean$Route_Type)])))
- .... [TRUNCATED] 
-
-&gt; data_clean &lt;- distinct(data_clean)
-
-&gt; subset_data &lt;- slice(data_clean, 1:1000)
-
-&gt; saveRDS(data_clean, file = here::here("dataset", "cleaned_dataset_full.rds"))
-
-&gt; saveRDS(subset_data, file = here::here("dataset", 
-+     "cleaned_dataset.rds"))
-
-&gt; summary(data_clean)
- Report.Number      Local.Case.Number  Agency.Name        ACRS.Report.Type  
- Length:186170      Length:186170      Length:186170      Length:186170     
- Class :character   Class :character   Class :character   Class :character  
- Mode  :character   Mode  :character   Mode  :character   Mode  :character  
-                                                                            
-                                                                            
-                                                                            
- Crash.Date.Time                   Route.Type         Road.Name        
- Min.   :2015-01-01 00:30:00.00   Length:186170      Length:186170     
- 1st Qu.:2017-03-24 13:04:15.00   Class :character   Class :character  
- Median :2019-05-31 15:20:00.00   Mode  :character   Mode  :character  
- Mean   :2019-09-10 19:20:38.36                                        
- 3rd Qu.:2022-04-03 06:38:15.00                                        
- Max.   :2024-10-09 17:06:00.00                                        
- Cross.Street.Name  Off.Road.Description Municipality      
- Length:186170      Length:186170        Length:186170     
- Class :character   Class :character     Class :character  
- Mode  :character   Mode  :character     Mode  :character  
-                                                           
-                                                           
-                                                           
- Related.Non.Motorist Collision.Type       Weather          Surface.Condition 
- Length:186170        Length:186170      Length:186170      Length:186170     
- Class :character     Class :character   Class :character   Class :character  
- Mode  :character     Mode  :character   Mode  :character   Mode  :character  
-                                                                              
-                                                                              
-                                                                              
-    Light           Traffic.Control    Driver.Substance.Abuse
- Length:186170      Length:186170      Length:186170         
- Class :character   Class :character   Class :character      
- Mode  :character   Mode  :character   Mode  :character      
-                                                             
-                                                             
-                                                             
- Non.Motorist.Substance.Abuse  Person.ID         Driver.At.Fault   
- Length:186170                Length:186170      Length:186170     
- Class :character             Class :character   Class :character  
- Mode  :character             Mode  :character   Mode  :character  
-                                                                   
-                                                                   
-                                                                   
- Injury.Severity    Circumstance       Driver.Distracted.By
- Length:186170      Length:186170      Length:186170       
- Class :character   Class :character   Class :character    
- Mode  :character   Mode  :character   Mode  :character    
-                                                           
-                                                           
-                                                           
- Drivers.License.State  Vehicle.ID        Vehicle.Damage.Extent
- Length:186170         Length:186170      Length:186170        
- Class :character      Class :character   Class :character     
- Mode  :character      Mode  :character   Mode  :character     
-                                                               
-                                                               
-                                                               
- Vehicle.First.Impact.Location Vehicle.Body.Type  Vehicle.Movement  
- Length:186170                 Length:186170      Length:186170     
- Class :character              Class :character   Class :character  
- Mode  :character              Mode  :character   Mode  :character  
-                                                                    
-                                                                    
-                                                                    
- Vehicle.Going.Dir   Speed.Limit    Driverless.Vehicle Parked.Vehicle    
- Length:186170      Min.   : 0.00   Length:186170      Length:186170     
- Class :character   1st Qu.:25.00   Class :character   Class :character  
- Mode  :character   Median :35.00   Mode  :character   Mode  :character  
-                    Mean   :32.41                                        
-                    3rd Qu.:40.00                                        
-                    Max.   :75.00                                        
-  Vehicle.Year  Vehicle.Make       Vehicle.Model         Latitude    
- Min.   :   0   Length:186170      Length:186170      Min.   :37.72  
- 1st Qu.:2006   Class :character   Class :character   1st Qu.:39.02  
- Median :2012   Mode  :character   Mode  :character   Median :39.07  
- Mean   :1966                                         Mean   :39.08  
- 3rd Qu.:2016                                         3rd Qu.:39.14  
- Max.   :9999                                         Max.   :39.99  
-   Longitude        Location        
- Min.   :-79.49   Length:186170     
- 1st Qu.:-77.19   Class :character  
- Median :-77.11   Mode  :character  
- Mean   :-77.11                     
- 3rd Qu.:-77.04                     
- Max.   :-75.53                     </code></pre>
-</div>
-</div>
-<p>You should never use absolute paths (eg. <code>/Users/danielsussman/path/to/project/</code> or <code>C:\MA415\\Final_Project\</code>).</p>
-<p>You might consider using the <code>here</code> function from the <a href="https://here.r-lib.org/articles/here.html"><code>here</code> package</a> to avoid path problems.</p>
-</section>
-<section id="load-and-clean-data-script" class="level3">
-<h3 class="anchored" data-anchor-id="load-and-clean-data-script">Load and clean data script</h3>
-<p>The idea behind this file is that someone coming to your website could largely replicate your analyses after running this script on the original data sets to clean them. This file might create a derivative data set that you then use for your subsequent analysis. Note that you don’t need to run this script from every post/page. Instead, you can load in the results of this script, which could be plain text files or <code>.RData</code> files. In your data page you’ll describe how these results were created. If you have a very large data set, you might save smaller data sets that you can use for exploration purposes. To link to this file, you can use <code>[cleaning script](/scripts/load_and_clean_data.R)</code> wich appears as <a href=".\scripts/load_and_clean_data.R">cleaning script</a>.</p>
-<hr>
 </section>
 </section>
 <section id="rubric-on-this-page" class="level2">
 <h2 class="anchored" data-anchor-id="rubric-on-this-page">Rubric: On this page</h2>
 <p>You will</p>
-<ul>
-<li>Describe where/how to find data.
-<ul>
-<li>You must include a link to the original data source(s). Make sure to provide attribution to those who collected the data.</li>
-<li>Why was the data collected/curated? Who put it together? (This is important, if you don’t know why it was collected then that might not be a good dataset to look at.</li>
+<ul class="task-list">
+<li><label><input type="checkbox">Describe where/how to find data.</label>
+<ul class="task-list">
+<li><label><input type="checkbox">You must include a link to the original data source(s). Make sure to provide attribution to those who collected the data.</label></li>
+<li><label><input type="checkbox">Why was the data collected/curated? Who put it together? (This is important, if you don’t know why it was collected then that might not be a good dataset to look at.</label></li>
 </ul></li>
-<li>Describe the different data files used and what each variable means.
-<ul>
-<li>If you have many variables then only describe the most relevant ones and summarize the rest.</li>
+<li><label><input type="checkbox">Describe the different data files used and what each variable means.</label>
+<ul class="task-list">
+<li><label><input type="checkbox">If you have many variables then only describe the most relevant ones and summarize the rest.</label></li>
 </ul></li>
-<li>Describe any cleaning you had to do for your data.
-<ul>
-<li>You <em>must</em> include a link to your <code>load_and_clean_data.R</code> file.</li>
-<li>Rrename variables and recode factors to make data more clear.</li>
-<li>Also, describe any additional R packages you used outside of those covered in class.</li>
-<li>Describe and show code for how you combined multiple data files and any cleaning that was necessary for that.</li>
-<li>Some repetition of what you do in your <code>load_and_clean_data.R</code> file is fine and encouraged if it helps explain what you did.</li>
+<li><label><input type="checkbox">Describe any cleaning you had to do for your data.</label>
+<ul class="task-list">
+<li><label><input type="checkbox">You <em>must</em> include a link to your <code>load_and_clean_data.R</code> file.</label></li>
+<li><label><input type="checkbox">Rename variables and recode factors to make data more clear.</label></li>
+<li><label><input type="checkbox">Also, describe any additional R packages you used outside of those covered in class.</label></li>
+<li><label><input type="checkbox">Describe and show code for how you combined multiple data files and any cleaning that was necessary for that.</label></li>
+<li><label><input type="checkbox">Some repetition of what you do in your <code>load_and_clean_data.R</code> file is fine and encouraged if it helps explain what you did.</label></li>
 </ul></li>
-<li>Organization, clarity, cleanliness of the page
-<ul>
-<li>Make sure to remove excessive warnings, use clean easy-to-read code (without side scrolling), organize with sections, use bullets and other organization tools, etc.</li>
-<li>This page should be self-contained.</li>
+<li><label><input type="checkbox">Organization, clarity, cleanliness of the page</label>
+<ul class="task-list">
+<li><label><input type="checkbox">Make sure to remove excessive warnings, use clean easy-to-read code (without side scrolling), organize with sections, use bullets and other organization tools, etc.</label></li>
+<li><label><input type="checkbox">This page should be self-contained.</label></li>
 </ul></li>
 </ul>
 
