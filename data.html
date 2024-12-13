@@ -6,6 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="We describe the sources of our data and the cleaning process.">
 
 <title>Data – MA [46]15 Final Project - Group 1</title>
 <style>
@@ -166,25 +167,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#access-and-use-information" id="toc-access-and-use-information" class="nav-link" data-scroll-target="#access-and-use-information">Access and Use Information</a></li>
   <li><a href="#additional-notes" id="toc-additional-notes" class="nav-link" data-scroll-target="#additional-notes">Additional Notes</a></li>
   </ul></li>
-  <li><a href="#maryland-highway-mileage-reports" id="toc-maryland-highway-mileage-reports" class="nav-link" data-scroll-target="#maryland-highway-mileage-reports">Maryland Highway Mileage Reports</a>
-  <ul class="collapse">
-  <li><a href="#data-files-and-variables-1" id="toc-data-files-and-variables-1" class="nav-link" data-scroll-target="#data-files-and-variables-1">Data Files and Variables</a></li>
-  <li><a href="#access-and-use-information-1" id="toc-access-and-use-information-1" class="nav-link" data-scroll-target="#access-and-use-information-1">Access and Use Information</a></li>
-  <li><a href="#additional-notes-1" id="toc-additional-notes-1" class="nav-link" data-scroll-target="#additional-notes-1">Additional Notes</a></li>
-  </ul></li>
-  <li><a href="#montgomery-county-crime-dataset" id="toc-montgomery-county-crime-dataset" class="nav-link" data-scroll-target="#montgomery-county-crime-dataset">Montgomery County Crime Dataset</a>
-  <ul class="collapse">
-  <li><a href="#data-files-and-variables-2" id="toc-data-files-and-variables-2" class="nav-link" data-scroll-target="#data-files-and-variables-2">Data Files and Variables</a></li>
-  <li><a href="#access-and-use-information-2" id="toc-access-and-use-information-2" class="nav-link" data-scroll-target="#access-and-use-information-2">Access and Use Information</a></li>
-  <li><a href="#additional-notes-2" id="toc-additional-notes-2" class="nav-link" data-scroll-target="#additional-notes-2">Additional Notes</a></li>
   </ul></li>
   <li><a href="#data-cleaning-process" id="toc-data-cleaning-process" class="nav-link" data-scroll-target="#data-cleaning-process">Data Cleaning Process</a>
   <ul class="collapse">
   <li><a href="#setup-and-requirements" id="toc-setup-and-requirements" class="nav-link" data-scroll-target="#setup-and-requirements">Setup and Requirements</a></li>
   <li><a href="#running-the-cleaning-script" id="toc-running-the-cleaning-script" class="nav-link" data-scroll-target="#running-the-cleaning-script">Running the Cleaning Script</a></li>
   <li><a href="#cleaning-operations" id="toc-cleaning-operations" class="nav-link" data-scroll-target="#cleaning-operations">Cleaning Operations</a></li>
+  <li><a href="#what-makes-a-good-data-set" id="toc-what-makes-a-good-data-set" class="nav-link" data-scroll-target="#what-makes-a-good-data-set">What makes a good data set?</a></li>
+  <li><a href="#where-to-keep-data" id="toc-where-to-keep-data" class="nav-link" data-scroll-target="#where-to-keep-data">Where to keep data?</a>
+  <ul class="collapse">
+  <li><a href="#sharing-your-data" id="toc-sharing-your-data" class="nav-link" data-scroll-target="#sharing-your-data">Sharing your data</a></li>
+  <li><a href="#load-and-clean-data-script" id="toc-load-and-clean-data-script" class="nav-link" data-scroll-target="#load-and-clean-data-script">Load and clean data script</a></li>
   </ul></li>
-  <li><a href="#data-integration-process" id="toc-data-integration-process" class="nav-link" data-scroll-target="#data-integration-process">Data Integration Process</a></li>
+  <li><a href="#rubric-on-this-page" id="toc-rubric-on-this-page" class="nav-link" data-scroll-target="#rubric-on-this-page">Rubric: On this page</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -197,6 +192,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h1 class="title">Data</h1>
 </div>
 
+<div>
+  <div class="description">
+    We describe the sources of our data and the cleaning process.
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
@@ -299,105 +299,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 </section>
 </section>
-<section id="maryland-highway-mileage-reports" class="level2">
-<h2 class="anchored" data-anchor-id="maryland-highway-mileage-reports">Maryland Highway Mileage Reports</h2>
-<p>The dataset, titled <strong>Annual Highway Mileage Reports</strong>, is provided by the <strong>Maryland Department of Transportation State Highway Administration (MDOT SHA)</strong>. This dataset combines comprehensive information about state, toll, county, and municipal roadway systems in Montgomery County, Maryland, focusing on three key report types: DSD9 (Detailed Surface Data), FCAVMT (Functional Class Annual Vehicle Miles Traveled), and FCMI (Functional Class Mileage Information) from 2017 to 2022.</p>
-<ul>
-<li><strong>Purpose of Collection</strong>
-<ul>
-<li>To track and analyze highway infrastructure across different functional classifications in Montgomery County.</li>
-<li>Support transportation planning and policy decisions by providing detailed metrics on road usage and capacity.</li>
-<li>Monitor changes in road infrastructure and vehicle miles traveled over time.</li>
-</ul></li>
-<li><strong>Attribution</strong>
-<ul>
-<li>Collected and maintained by the Maryland Department of Transportation State Highway Administration.</li>
-<li>Represents official state records of highway infrastructure and usage.</li>
-</ul></li>
-</ul>
-<section id="data-files-and-variables-1" class="level3">
-<h3 class="anchored" data-anchor-id="data-files-and-variables-1">Data Files and Variables</h3>
-<p>The dataset combines three main report types, each providing distinct insights into the county’s highway system:</p>
-<section id="key-components" class="level4">
-<h4 class="anchored" data-anchor-id="key-components">Key Components</h4>
-<ul>
-<li><strong>DSD9 (Detailed Surface Data)</strong>:
-<ul>
-<li>Mainline mileage (total, divided, non-divided)</li>
-<li>Annual vehicle miles</li>
-<li>Lane mileage (auxiliary spurs, mainline, total)</li>
-<li>Square yards of surfacing</li>
-</ul></li>
-<li><strong>FCAVMT (Functional Class Annual Vehicle Miles Traveled)</strong>:
-<ul>
-<li>Tracks vehicle miles traveled across different road classifications</li>
-<li>Separates data into rural and urban categories</li>
-<li>Includes various road types from Interstate to Local roads</li>
-</ul></li>
-<li><strong>FCMI (Functional Class Mileage Information)</strong>:
-<ul>
-<li>Documents road mileage by functional classification</li>
-<li>Covers both rural and urban road networks</li>
-<li>Categorizes roads from Interstate to Local systems</li>
-</ul></li>
-</ul>
 </section>
-<section id="classification-variables" class="level4">
-<h4 class="anchored" data-anchor-id="classification-variables">Classification Variables</h4>
-<ul>
-<li><strong>Road Categories</strong>:
-<ul>
-<li>Interstate</li>
-<li>Other Freeways</li>
-<li>Principal Arterial</li>
-<li>Minor Arterial</li>
-<li>Major Collector</li>
-<li>Minor Collector</li>
-<li>Local Roads</li>
-</ul></li>
-</ul>
-<p>Each category is further subdivided into rural and urban designations.</p>
-</section>
-</section>
-<section id="access-and-use-information-1" class="level3">
-<h3 class="anchored" data-anchor-id="access-and-use-information-1">Access and Use Information</h3>
-<ul>
-<li>The dataset represents official state records and is used for planning and administrative purposes.</li>
-<li>Data is structured to support analysis of transportation infrastructure trends from 2017 to 2022.</li>
-</ul>
-</section>
-<section id="additional-notes-1" class="level3">
-<h3 class="anchored" data-anchor-id="additional-notes-1">Additional Notes</h3>
-<ul>
-<li><strong>Time Coverage</strong>: The dataset spans six years (2017-2022), providing recent historical context.</li>
-<li><strong>Geographical Scope</strong>: Focuses specifically on Montgomery County, Maryland.</li>
-<li><strong>Integration</strong>: Combines three distinct report types to provide a comprehensive view of the county’s highway system.</li>
-<li><strong>Limitations</strong>: Earlier years may have fewer data categories as reporting requirements expanded over time.</li>
-</ul>
-</section>
-</section>
-<section id="montgomery-county-crime-dataset" class="level2">
-<h2 class="anchored" data-anchor-id="montgomery-county-crime-dataset">Montgomery County Crime Dataset</h2>
-<p>The dataset, titled <strong>Crime</strong>, is provided by the <strong>Montgomery County Police Department</strong> and can be accessed through Montgomery County’s open data portal at dataMontgomery. This dataset contains detailed crime statistics and incident reports, utilizing the National Incident-Based Reporting System (NIBRS) classification standards.</p>
-<p>The primary purpose of this dataset is to provide public access to comprehensive crime statistics in Montgomery County, supporting law enforcement analysis and transparency initiatives while enabling data-driven policy decisions regarding public safety. The data is collected and maintained by the Montgomery County Police Department and compiled using the EJustice records-management system. The data is updated daily, with metadata last updated on December 7, 2024.</p>
-<section id="data-files-and-variables-2" class="level3">
-<h3 class="anchored" data-anchor-id="data-files-and-variables-2">Data Files and Variables</h3>
-<p>The dataset includes detailed information about reported crimes through various key components. The incident information includes unique identifiers such as Incident ID and CR Number, along with temporal data including dispatch date/time, and start and end date/time. Each incident is classified using NIBRS codes and can include up to three crime name categories per incident, along with offense codes and the number of victims involved.</p>
-<p>Location data is extensively documented, including police district name and number, detailed block address components, city, state, and zip code information. Geographic coordinates are provided through latitude and longitude, and law enforcement jurisdictional information is included through sector, beat, and PRA designations.</p>
-</section>
-<section id="access-and-use-information-2" class="level3">
-<h3 class="anchored" data-anchor-id="access-and-use-information-2">Access and Use Information</h3>
-<p>The dataset is made available to the public through multiple format options, including CSV, RDF/XML, JSON, and XML. The data coverage begins from July 1st, 2016, and can be accessed through the Montgomery County open data portal. To maintain privacy standards, all personal information is excluded from the public dataset to protect victims’ privacy.</p>
-</section>
-<section id="additional-notes-2" class="level3">
-<h3 class="anchored" data-anchor-id="additional-notes-2">Additional Notes</h3>
-<p>The dataset is updated daily, with quarterly refreshes to reflect any changes in investigation status. Users should be aware of several important limitations: the information may be preliminary and subject to change, incidents may include attempted crimes alongside completed ones, and crime classifications may be updated as investigations progress. The data may contain mechanical or human errors, and while arrest information is included, all arrested persons are presumed innocent until proven guilty in a court of law.</p>
-<p>This comprehensive dataset serves as a valuable resource for understanding crime patterns and law enforcement activities in Montgomery County, while maintaining appropriate privacy protections and data quality standards. The frequent updates and multiple format options make it a useful tool for researchers, policy makers, and the general public interested in local crime statistics and trends.</p>
-</section>
-</section>
-<section id="data-cleaning-process" class="level2">
-<h2 class="anchored" data-anchor-id="data-cleaning-process">Data Cleaning Process</h2>
-<p>Our data cleaning process is implemented in our <a href="./scripts/load_and_clean_data.R">load_and_clean_data.R</a> script. Here’s how to use it and what it does:</p>
+<section id="data-cleaning-process" class="level1">
+<h1>Data Cleaning Process</h1>
+<p>Our data cleaning process is implemented in our <a href=".\scripts/load_and_clean_data.R">load_and_clean_data.R</a> script. Here’s how to use it and what it does:</p>
 <section id="setup-and-requirements" class="level3">
 <h3 class="anchored" data-anchor-id="setup-and-requirements">Setup and Requirements</h3>
 <p>First, ensure you have all required packages installed:</p>
@@ -427,184 +332,190 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Handles missing values in the Route Type column</li>
 <li>Removes duplicate entries</li>
 </ol>
+<p>Initially, you will study <em>one dataset</em> but later you will need to combine that data with another dataset. For this reason, I recommend finding data that has some date and/or location components. These types of data are conducive to interesting visualizations and analysis and you can also combine this data with other data that also has a date or location variable. Data from the census, weather data, economic data, are all relatively easy to combine with other data with time/location components.</p>
+</section>
+<section id="what-makes-a-good-data-set" class="level2">
+<h2 class="anchored" data-anchor-id="what-makes-a-good-data-set">What makes a good data set?</h2>
+<ul>
+<li>Data you are interested in and care about.</li>
+<li>Data where there are a lot of potential questions that you can explore.</li>
+<li>A data set that isn’t completely cleaned already.</li>
+<li>Multiple sources for data that you can combine.</li>
+<li>Some type of time and/or location component.</li>
+</ul>
+</section>
+<section id="where-to-keep-data" class="level2">
+<h2 class="anchored" data-anchor-id="where-to-keep-data">Where to keep data?</h2>
+<p>Below 50mb: In <code>dataset</code> folder</p>
+<p>Above 50mb: In <code>dataset_ignore</code> folder. This folder will be ignored by <code>git</code> so you’ll have to manually sync these files across your team.</p>
+<section id="sharing-your-data" class="level3">
+<h3 class="anchored" data-anchor-id="sharing-your-data">Sharing your data</h3>
+<p>For small datasets (&lt;50mb), you can use the <code>dataset</code> folder that is tracked by github. Add the files just like you would any other file.</p>
+<p>If you create a folder named <code>data</code> this will cause problems.</p>
+<p>For larger datasets, you’ll need to create a new folder in the project root directory named <code>dataset-ignore</code>. This will be ignored by git (based off the <code>.gitignore</code> file in the project root directory) which will help you avoid issues with Github’s size limits. Your team will have to manually make sure the data files in <code>dataset-ignore</code> are synced across team members.</p>
+<p>Your <a href=".\scripts/load_and_clean_data.R">load_and_clean_data.R</a> file is how you will load and clean your data. Here is a an example of a very simple one.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">"scripts/load_and_clean_data.R"</span>,</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">echo =</span> <span class="cn">TRUE</span> <span class="co"># Use echo=FALSE or omit it to avoid code output  </span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+&gt; library(tidyverse)
+
+&gt; library(lubridate)
+
+&gt; library(skimr)
+
+&gt; library(here)
+
+&gt; crash_df &lt;- read.csv(here::here("dataset", "Crash_Reporting_-_Drivers_Data.csv"))
+
+&gt; threshold &lt;- 0.8
+
+&gt; data_clean &lt;- select_if(crash_df, ~mean(is.na(.)) &lt; 
++     threshold)
+
+&gt; data_clean &lt;- mutate(data_clean, Local.Case.Number = as.character(Local.Case.Number))
+
+&gt; data_clean &lt;- mutate(data_clean, Crash.Date.Time = mdy_hms(Crash.Date.Time))
+
+&gt; if ("Route_Type" %in% names(data_clean)) {
++     most_common_route &lt;- names(which.max(table(data_clean$Route_Type[!is.na(data_clean$Route_Type)])))
+ .... [TRUNCATED] 
+
+&gt; data_clean &lt;- distinct(data_clean)
+
+&gt; subset_data &lt;- slice(data_clean, 1:1000)
+
+&gt; saveRDS(data_clean, file = here::here("dataset", "cleaned_dataset_full.rds"))
+
+&gt; saveRDS(subset_data, file = here::here("dataset", 
++     "cleaned_dataset.rds"))
+
+&gt; summary(data_clean)
+ Report.Number      Local.Case.Number  Agency.Name        ACRS.Report.Type  
+ Length:186170      Length:186170      Length:186170      Length:186170     
+ Class :character   Class :character   Class :character   Class :character  
+ Mode  :character   Mode  :character   Mode  :character   Mode  :character  
+                                                                            
+                                                                            
+                                                                            
+ Crash.Date.Time                   Route.Type         Road.Name        
+ Min.   :2015-01-01 00:30:00.00   Length:186170      Length:186170     
+ 1st Qu.:2017-03-24 13:04:15.00   Class :character   Class :character  
+ Median :2019-05-31 15:20:00.00   Mode  :character   Mode  :character  
+ Mean   :2019-09-10 19:20:38.36                                        
+ 3rd Qu.:2022-04-03 06:38:15.00                                        
+ Max.   :2024-10-09 17:06:00.00                                        
+ Cross.Street.Name  Off.Road.Description Municipality      
+ Length:186170      Length:186170        Length:186170     
+ Class :character   Class :character     Class :character  
+ Mode  :character   Mode  :character     Mode  :character  
+                                                           
+                                                           
+                                                           
+ Related.Non.Motorist Collision.Type       Weather          Surface.Condition 
+ Length:186170        Length:186170      Length:186170      Length:186170     
+ Class :character     Class :character   Class :character   Class :character  
+ Mode  :character     Mode  :character   Mode  :character   Mode  :character  
+                                                                              
+                                                                              
+                                                                              
+    Light           Traffic.Control    Driver.Substance.Abuse
+ Length:186170      Length:186170      Length:186170         
+ Class :character   Class :character   Class :character      
+ Mode  :character   Mode  :character   Mode  :character      
+                                                             
+                                                             
+                                                             
+ Non.Motorist.Substance.Abuse  Person.ID         Driver.At.Fault   
+ Length:186170                Length:186170      Length:186170     
+ Class :character             Class :character   Class :character  
+ Mode  :character             Mode  :character   Mode  :character  
+                                                                   
+                                                                   
+                                                                   
+ Injury.Severity    Circumstance       Driver.Distracted.By
+ Length:186170      Length:186170      Length:186170       
+ Class :character   Class :character   Class :character    
+ Mode  :character   Mode  :character   Mode  :character    
+                                                           
+                                                           
+                                                           
+ Drivers.License.State  Vehicle.ID        Vehicle.Damage.Extent
+ Length:186170         Length:186170      Length:186170        
+ Class :character      Class :character   Class :character     
+ Mode  :character      Mode  :character   Mode  :character     
+                                                               
+                                                               
+                                                               
+ Vehicle.First.Impact.Location Vehicle.Body.Type  Vehicle.Movement  
+ Length:186170                 Length:186170      Length:186170     
+ Class :character              Class :character   Class :character  
+ Mode  :character              Mode  :character   Mode  :character  
+                                                                    
+                                                                    
+                                                                    
+ Vehicle.Going.Dir   Speed.Limit    Driverless.Vehicle Parked.Vehicle    
+ Length:186170      Min.   : 0.00   Length:186170      Length:186170     
+ Class :character   1st Qu.:25.00   Class :character   Class :character  
+ Mode  :character   Median :35.00   Mode  :character   Mode  :character  
+                    Mean   :32.41                                        
+                    3rd Qu.:40.00                                        
+                    Max.   :75.00                                        
+  Vehicle.Year  Vehicle.Make       Vehicle.Model         Latitude    
+ Min.   :   0   Length:186170      Length:186170      Min.   :37.72  
+ 1st Qu.:2006   Class :character   Class :character   1st Qu.:39.02  
+ Median :2012   Mode  :character   Mode  :character   Median :39.07  
+ Mean   :1966                                         Mean   :39.08  
+ 3rd Qu.:2016                                         3rd Qu.:39.14  
+ Max.   :9999                                         Max.   :39.99  
+   Longitude        Location        
+ Min.   :-79.49   Length:186170     
+ 1st Qu.:-77.19   Class :character  
+ Median :-77.11   Mode  :character  
+ Mean   :-77.11                     
+ 3rd Qu.:-77.04                     
+ Max.   :-75.53                     </code></pre>
+</div>
+</div>
+<p>You should never use absolute paths (eg. <code>/Users/danielsussman/path/to/project/</code> or <code>C:\MA415\\Final_Project\</code>).</p>
+<p>You might consider using the <code>here</code> function from the <a href="https://here.r-lib.org/articles/here.html"><code>here</code> package</a> to avoid path problems.</p>
+</section>
+<section id="load-and-clean-data-script" class="level3">
+<h3 class="anchored" data-anchor-id="load-and-clean-data-script">Load and clean data script</h3>
+<p>The idea behind this file is that someone coming to your website could largely replicate your analyses after running this script on the original data sets to clean them. This file might create a derivative data set that you then use for your subsequent analysis. Note that you don’t need to run this script from every post/page. Instead, you can load in the results of this script, which could be plain text files or <code>.RData</code> files. In your data page you’ll describe how these results were created. If you have a very large data set, you might save smaller data sets that you can use for exploration purposes. To link to this file, you can use <code>[cleaning script](/scripts/load_and_clean_data.R)</code> wich appears as <a href=".\scripts/load_and_clean_data.R">cleaning script</a>.</p>
+<hr>
 </section>
 </section>
-<section id="data-integration-process" class="level2">
-<h2 class="anchored" data-anchor-id="data-integration-process">Data Integration Process</h2>
-<p>When combining the datasets, we faced several challenges that required careful handling. The geographic alignment between the crash data and the PCI dataset was particularly challenging due to differences in road name formatting and segmentation. We developed a matching algorithm that standardized road names and used geographic coordinates to ensure accurate joining of the datasets, as shown in the following code:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Standardize road names in both datasets</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>standardize_road_names <span class="ot">&lt;-</span> <span class="cf">function</span>(road_name) {</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  road_name <span class="sc">%&gt;%</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">str_to_upper</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">str_replace_all</span>(<span class="fu">c</span>(</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>      <span class="st">"AVENUE"</span> <span class="ot">=</span> <span class="st">"AVE"</span>,</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>      <span class="st">"BOULEVARD"</span> <span class="ot">=</span> <span class="st">"BLVD"</span>,</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>      <span class="st">"STREET"</span> <span class="ot">=</span> <span class="st">"ST"</span>,</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>      <span class="st">"ROAD"</span> <span class="ot">=</span> <span class="st">"RD"</span>,</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>      <span class="st">"HIGHWAY"</span> <span class="ot">=</span> <span class="st">"HWY"</span></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    )) <span class="sc">%&gt;%</span></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">str_trim</span>()</span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Clean and prepare datasets for matching</span></span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>crash_data <span class="ot">&lt;-</span> crash_data <span class="sc">%&gt;%</span></span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">Road.Name =</span> <span class="fu">standardize_road_names</span>(Road.Name),</span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">location_key =</span> <span class="fu">paste</span>(Road.Name, Municipality)</span>
-<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>pci_data <span class="ot">&lt;-</span> pci_data <span class="sc">%&gt;%</span></span>
-<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">StreetName =</span> <span class="fu">standardize_road_names</span>(StreetName),</span>
-<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">location_key =</span> <span class="fu">paste</span>(StreetName, City)</span>
-<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a><span class="co"># Perform fuzzy matching for unmatched roads</span></span>
-<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stringdist)</span>
-<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>unmatched_roads <span class="ot">&lt;-</span> crash_data <span class="sc">%&gt;%</span></span>
-<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span>location_key <span class="sc">%in%</span> pci_data<span class="sc">$</span>location_key)</span>
-<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a><span class="co"># Match using string distance with a threshold</span></span>
-<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>fuzzy_matches <span class="ot">&lt;-</span> <span class="fu">stringdistmatrix</span>(</span>
-<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>  unmatched_roads<span class="sc">$</span>Road.Name,</span>
-<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>  pci_data<span class="sc">$</span>StreetName,</span>
-<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a>  <span class="at">method =</span> <span class="st">"jw"</span>,</span>
-<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a>  <span class="at">p =</span> <span class="fl">0.1</span></span>
-<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a>) <span class="sc">%&gt;%</span> <span class="fu">as.data.frame</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>The integration of temporal data presented another challenge, particularly when combining crash reports with annual highway data. We implemented a time-based joining strategy that matched crash incidents with the corresponding annual data, ensuring that we maintained the temporal integrity of our analysis:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Prepare temporal joins for highway data</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>crash_data <span class="ot">&lt;-</span> crash_data <span class="sc">%&gt;%</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">crash_year =</span> <span class="fu">year</span>(Crash.Date.Time),</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">crash_month =</span> <span class="fu">month</span>(Crash.Date.Time)</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>highway_data <span class="ot">&lt;-</span> highway_data <span class="sc">%&gt;%</span></span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">report_year =</span> <span class="fu">year</span>(report_date))</span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Join datasets with temporal alignment</span></span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>combined_data <span class="ot">&lt;-</span> crash_data <span class="sc">%&gt;%</span></span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(</span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>    highway_data,</span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"crash_year"</span> <span class="ot">=</span> <span class="st">"report_year"</span>, <span class="st">"Road.Name"</span> <span class="ot">=</span> <span class="st">"highway_name"</span>)</span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Handle cases where highway data is from previous year</span></span>
-<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Road.Name) <span class="sc">%&gt;%</span></span>
-<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fill</span>(<span class="fu">c</span>(traffic_volume, lane_width, surface_type), <span class="at">.direction =</span> <span class="st">"downup"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>()</span>
-<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Validate temporal alignment</span></span>
-<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>temporal_coverage <span class="ot">&lt;-</span> combined_data <span class="sc">%&gt;%</span></span>
-<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(crash_year) <span class="sc">%&gt;%</span></span>
-<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
-<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">crash_count =</span> <span class="fu">n</span>(),</span>
-<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">has_highway_data =</span> <span class="fu">sum</span>(<span class="sc">!</span><span class="fu">is.na</span>(traffic_volume)) <span class="sc">/</span> <span class="fu">n</span>()</span>
-<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>For the highway mileage, we have several steps for data cleaning. Our approach began with the implementation of a sophisticated road classification system that addresses the varying naming conventions found across different reporting years. We developed a standardize_road_class function that employs regular expressions to match different descriptions of the same road types, creating a unified and consistent classification scheme throughout the dataset.</p>
-<p>The handling of missing values formed a crucial component of our data cleaning process. We approached this challenge with context-specific solutions for different types of data. For instance, gaps in the Annual Average Daily Traffic (AADT) measurements were filled using median values to maintain statistical relevance, while missing lane mile data was conservatively set to zero. All other metric calculations incorporated robust aggregation methods to ensure accurate results even in the presence of incomplete data.</p>
-<p>Temporal alignment presented another critical aspect of our data preparation. We implemented proper date handling and year extraction procedures, which proved essential for matching highway infrastructure data with our crash records. This temporal standardization enables us to effectively track changes in road infrastructure over time and establish meaningful correlations with crash patterns. The alignment process ensures that our analysis captures the dynamic relationship between infrastructure changes and safety outcomes.</p>
-<p>Our quality validation process incorporated multiple layers of verification to ensure data integrity. We conducted thorough examinations of data completeness across different years, verified the consistency of measurements, analyzed the distribution of road types, and tracked year-over-year changes in key metrics.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Function to standardize road classifications across different reporting formats</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>standardize_road_class <span class="ot">&lt;-</span> <span class="cf">function</span>(road_class) {</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">case_when</span>(</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Interstate highways (I-495, I-270, etc.)</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">str_detect</span>(road_class, <span class="st">"(?i)interstate|I-[0-9]"</span>) <span class="sc">~</span> <span class="st">"Interstate"</span>,</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Other controlled-access highways (MD 200)</span></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">str_detect</span>(road_class, <span class="st">"(?i)freeway|expressway|controlled"</span>) <span class="sc">~</span> <span class="st">"Other Freeways"</span>,</span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Major arterial roads (Georgia Ave, Rockville Pike)</span></span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">str_detect</span>(road_class, <span class="st">"(?i)principal.*arterial|major.*highway"</span>) <span class="sc">~</span> <span class="st">"Principal Arterial"</span>,</span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Secondary arterial roads</span></span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">str_detect</span>(road_class, <span class="st">"(?i)minor.*arterial|secondary"</span>) <span class="sc">~</span> <span class="st">"Minor Arterial"</span>,</span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Major collector roads</span></span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">str_detect</span>(road_class, <span class="st">"(?i)major.*collector|primary.*collector"</span>) <span class="sc">~</span> <span class="st">"Major Collector"</span>,</span>
-<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Minor collector roads</span></span>
-<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>    <span class="fu">str_detect</span>(road_class, <span class="st">"(?i)minor.*collector|secondary.*collector"</span>) <span class="sc">~</span> <span class="st">"Minor Collector"</span>,</span>
-<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Local roads and streets</span></span>
-<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>    <span class="fu">str_detect</span>(road_class, <span class="st">"(?i)local|residential|unclassified"</span>) <span class="sc">~</span> <span class="st">"Local Roads"</span>,</span>
-<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Default classification for undefined categories</span></span>
-<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>    <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">"Other"</span></span>
-<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a><span class="co"># Process and clean highway mileage data</span></span>
-<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a>highway_data <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"Annual_Highway_Mileage.xlsx"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Clean column names to consistent format</span></span>
-<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a>  janitor<span class="sc">::</span><span class="fu">clean_names</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Filter specifically for Montgomery County data</span></span>
-<span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(county <span class="sc">==</span> <span class="st">"Montgomery"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb5-38"><a href="#cb5-38" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Handle missing values in critical columns</span></span>
-<span id="cb5-39"><a href="#cb5-39" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb5-40"><a href="#cb5-40" aria-hidden="true" tabindex="-1"></a>    <span class="at">aadt =</span> <span class="fu">replace_na</span>(aadt, <span class="fu">median</span>(aadt, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)),</span>
-<span id="cb5-41"><a href="#cb5-41" aria-hidden="true" tabindex="-1"></a>    <span class="at">lane_miles =</span> <span class="fu">replace_na</span>(lane_miles, <span class="dv">0</span>),</span>
-<span id="cb5-42"><a href="#cb5-42" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb5-43"><a href="#cb5-43" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Create standardized classifications</span></span>
-<span id="cb5-44"><a href="#cb5-44" aria-hidden="true" tabindex="-1"></a>    <span class="at">road_class =</span> <span class="fu">standardize_road_class</span>(functional_class),</span>
-<span id="cb5-45"><a href="#cb5-45" aria-hidden="true" tabindex="-1"></a>    <span class="at">urban_rural =</span> <span class="fu">if_else</span>(<span class="fu">str_detect</span>(area_type, <span class="st">"(?i)urban"</span>), <span class="st">"Urban"</span>, <span class="st">"Rural"</span>),</span>
-<span id="cb5-46"><a href="#cb5-46" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb5-47"><a href="#cb5-47" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Convert dates to proper format</span></span>
-<span id="cb5-48"><a href="#cb5-48" aria-hidden="true" tabindex="-1"></a>    <span class="at">report_date =</span> <span class="fu">mdy</span>(report_date),</span>
-<span id="cb5-49"><a href="#cb5-49" aria-hidden="true" tabindex="-1"></a>    <span class="at">year =</span> <span class="fu">year</span>(report_date)</span>
-<span id="cb5-50"><a href="#cb5-50" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb5-51"><a href="#cb5-51" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb5-52"><a href="#cb5-52" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Calculate key metrics by road classification</span></span>
-<span id="cb5-53"><a href="#cb5-53" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(road_class, urban_rural, year) <span class="sc">%&gt;%</span></span>
-<span id="cb5-54"><a href="#cb5-54" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
-<span id="cb5-55"><a href="#cb5-55" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Total lane miles for each classification</span></span>
-<span id="cb5-56"><a href="#cb5-56" aria-hidden="true" tabindex="-1"></a>    <span class="at">total_miles =</span> <span class="fu">sum</span>(lane_miles, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb5-57"><a href="#cb5-57" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb5-58"><a href="#cb5-58" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Average daily traffic (weighted by segment length)</span></span>
-<span id="cb5-59"><a href="#cb5-59" aria-hidden="true" tabindex="-1"></a>    <span class="at">avg_daily_traffic =</span> <span class="fu">weighted.mean</span>(aadt, lane_miles, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb5-60"><a href="#cb5-60" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb5-61"><a href="#cb5-61" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Total vehicle miles traveled</span></span>
-<span id="cb5-62"><a href="#cb5-62" aria-hidden="true" tabindex="-1"></a>    <span class="at">vehicle_miles_traveled =</span> <span class="fu">sum</span>(vmt, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb5-63"><a href="#cb5-63" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb5-64"><a href="#cb5-64" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Number of segments in each classification</span></span>
-<span id="cb5-65"><a href="#cb5-65" aria-hidden="true" tabindex="-1"></a>    <span class="at">segment_count =</span> <span class="fu">n</span>(),</span>
-<span id="cb5-66"><a href="#cb5-66" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb5-67"><a href="#cb5-67" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Additional metrics for analysis</span></span>
-<span id="cb5-68"><a href="#cb5-68" aria-hidden="true" tabindex="-1"></a>    <span class="at">avg_segment_length =</span> <span class="fu">mean</span>(lane_miles, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb5-69"><a href="#cb5-69" aria-hidden="true" tabindex="-1"></a>    <span class="at">total_intersections =</span> <span class="fu">sum</span>(intersection_count, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb5-70"><a href="#cb5-70" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb5-71"><a href="#cb5-71" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>()</span>
-<span id="cb5-72"><a href="#cb5-72" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-73"><a href="#cb5-73" aria-hidden="true" tabindex="-1"></a><span class="co"># Data quality validation</span></span>
-<span id="cb5-74"><a href="#cb5-74" aria-hidden="true" tabindex="-1"></a>quality_check <span class="ot">&lt;-</span> highway_data <span class="sc">%&gt;%</span></span>
-<span id="cb5-75"><a href="#cb5-75" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(year) <span class="sc">%&gt;%</span></span>
-<span id="cb5-76"><a href="#cb5-76" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
-<span id="cb5-77"><a href="#cb5-77" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Basic completeness checks</span></span>
-<span id="cb5-78"><a href="#cb5-78" aria-hidden="true" tabindex="-1"></a>    <span class="at">total_miles =</span> <span class="fu">sum</span>(total_miles),</span>
-<span id="cb5-79"><a href="#cb5-79" aria-hidden="true" tabindex="-1"></a>    <span class="at">missing_traffic =</span> <span class="fu">sum</span>(<span class="fu">is.na</span>(avg_daily_traffic)),</span>
-<span id="cb5-80"><a href="#cb5-80" aria-hidden="true" tabindex="-1"></a>    <span class="at">missing_vmt =</span> <span class="fu">sum</span>(<span class="fu">is.na</span>(vehicle_miles_traveled)),</span>
-<span id="cb5-81"><a href="#cb5-81" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb5-82"><a href="#cb5-82" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Consistency checks</span></span>
-<span id="cb5-83"><a href="#cb5-83" aria-hidden="true" tabindex="-1"></a>    <span class="at">min_segment_length =</span> <span class="fu">min</span>(avg_segment_length),</span>
-<span id="cb5-84"><a href="#cb5-84" aria-hidden="true" tabindex="-1"></a>    <span class="at">max_segment_length =</span> <span class="fu">max</span>(avg_segment_length),</span>
-<span id="cb5-85"><a href="#cb5-85" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb5-86"><a href="#cb5-86" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Distribution checks</span></span>
-<span id="cb5-87"><a href="#cb5-87" aria-hidden="true" tabindex="-1"></a>    <span class="at">urban_ratio =</span> <span class="fu">sum</span>(urban_rural <span class="sc">==</span> <span class="st">"Urban"</span>) <span class="sc">/</span> <span class="fu">n</span>(),</span>
-<span id="cb5-88"><a href="#cb5-88" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb5-89"><a href="#cb5-89" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Year-over-year change</span></span>
-<span id="cb5-90"><a href="#cb5-90" aria-hidden="true" tabindex="-1"></a>    <span class="at">pct_change_miles =</span> (total_miles <span class="sc">-</span> <span class="fu">lag</span>(total_miles)) <span class="sc">/</span> <span class="fu">lag</span>(total_miles) <span class="sc">*</span> <span class="dv">100</span></span>
-<span id="cb5-91"><a href="#cb5-91" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb5-92"><a href="#cb5-92" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-93"><a href="#cb5-93" aria-hidden="true" tabindex="-1"></a><span class="co"># Save cleaned dataset with documentation</span></span>
-<span id="cb5-94"><a href="#cb5-94" aria-hidden="true" tabindex="-1"></a><span class="fu">write_rds</span>(highway_data, <span class="st">"cleaned_highway_data.rds"</span>)</span>
-<span id="cb5-95"><a href="#cb5-95" aria-hidden="true" tabindex="-1"></a><span class="fu">write_csv</span>(quality_check, <span class="st">"highway_data_quality_report.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<section id="rubric-on-this-page" class="level2">
+<h2 class="anchored" data-anchor-id="rubric-on-this-page">Rubric: On this page</h2>
+<p>You will</p>
+<ul>
+<li>Describe where/how to find data.
+<ul>
+<li>You must include a link to the original data source(s). Make sure to provide attribution to those who collected the data.</li>
+<li>Why was the data collected/curated? Who put it together? (This is important, if you don’t know why it was collected then that might not be a good dataset to look at.</li>
+</ul></li>
+<li>Describe the different data files used and what each variable means.
+<ul>
+<li>If you have many variables then only describe the most relevant ones and summarize the rest.</li>
+</ul></li>
+<li>Describe any cleaning you had to do for your data.
+<ul>
+<li>You <em>must</em> include a link to your <code>load_and_clean_data.R</code> file.</li>
+<li>Rrename variables and recode factors to make data more clear.</li>
+<li>Also, describe any additional R packages you used outside of those covered in class.</li>
+<li>Describe and show code for how you combined multiple data files and any cleaning that was necessary for that.</li>
+<li>Some repetition of what you do in your <code>load_and_clean_data.R</code> file is fine and encouraged if it helps explain what you did.</li>
+</ul></li>
+<li>Organization, clarity, cleanliness of the page
+<ul>
+<li>Make sure to remove excessive warnings, use clean easy-to-read code (without side scrolling), organize with sections, use bullets and other organization tools, etc.</li>
+<li>This page should be self-contained.</li>
+</ul></li>
+</ul>
 
 
 </section>
