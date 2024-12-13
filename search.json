@@ -35,6 +35,13 @@
     "text": "Data Cleaning Process\nOur data cleaning process is implemented in our load_and_clean_data.R script. Here’s how to use it and what it does:\n\nSetup and Requirements\nFirst, ensure you have all required packages installed:\ninstall.packages(c(\"tidyverse\", \"lubridate\", \"skimr\", \"here\"))\n\n\nRunning the Cleaning Script\nThe script can be run in two ways:\n\n# Option 1: Source directly in your Quarto document\nsource(here::here(\"scripts\", \"load_and_clean_data.R\"), echo = TRUE)\n\n# Option 2: Load the already cleaned data\nclean_data &lt;- readRDS(here::here(\"dataset\", \"cleaned_dataset_full.rds\"))\n\n# Or load the exploration subset\nsubset_data &lt;- readRDS(here::here(\"dataset\", \"cleaned_dataset.rds\"))\n\n\n\nCleaning Operations\nOur cleaning script performs the following operations:\n\nRemoves columns with more than 80% missing values\nConverts the case number to proper character format\nStandardizes date/time formats using lubridate\nHandles missing values in the Route Type column\nRemoves duplicate entries"
   },
   {
+    "objectID": "data.html#data-integration-process",
+    "href": "data.html#data-integration-process",
+    "title": "Data",
+    "section": "Data Integration Process",
+    "text": "Data Integration Process\nWhen combining the datasets, we faced several challenges that required careful handling. The geographic alignment between the crash data and the PCI dataset was particularly challenging due to differences in road name formatting and segmentation. We developed a matching algorithm that standardized road names and used geographic coordinates to ensure accurate joining of the datasets, as shown in the following code:"
+  },
+  {
     "objectID": "data.html#rubric-on-this-page",
     "href": "data.html#rubric-on-this-page",
     "title": "Data",

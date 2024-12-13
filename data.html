@@ -101,6 +101,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -184,6 +213,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#running-the-cleaning-script" id="toc-running-the-cleaning-script" class="nav-link" data-scroll-target="#running-the-cleaning-script">Running the Cleaning Script</a></li>
   <li><a href="#cleaning-operations" id="toc-cleaning-operations" class="nav-link" data-scroll-target="#cleaning-operations">Cleaning Operations</a></li>
   </ul></li>
+  <li><a href="#data-integration-process" id="toc-data-integration-process" class="nav-link" data-scroll-target="#data-integration-process">Data Integration Process</a></li>
+  </ul></li>
+  <li><a href="#standardize-road-names-in-both-datasets" id="toc-standardize-road-names-in-both-datasets" class="nav-link" data-scroll-target="#standardize-road-names-in-both-datasets">Standardize road names in both datasets</a></li>
+  <li><a href="#clean-and-prepare-datasets-for-matching" id="toc-clean-and-prepare-datasets-for-matching" class="nav-link" data-scroll-target="#clean-and-prepare-datasets-for-matching">Clean and prepare datasets for matching</a></li>
+  <li><a href="#perform-fuzzy-matching-for-unmatched-roads" id="toc-perform-fuzzy-matching-for-unmatched-roads" class="nav-link" data-scroll-target="#perform-fuzzy-matching-for-unmatched-roads">Perform fuzzy matching for unmatched roads</a></li>
+  <li><a href="#match-using-string-distance-with-a-threshold" id="toc-match-using-string-distance-with-a-threshold" class="nav-link" data-scroll-target="#match-using-string-distance-with-a-threshold">Match using string distance with a threshold</a></li>
+  <li><a href="#prepare-temporal-joins-for-highway-data" id="toc-prepare-temporal-joins-for-highway-data" class="nav-link" data-scroll-target="#prepare-temporal-joins-for-highway-data">Prepare temporal joins for highway data</a></li>
+  <li><a href="#join-datasets-with-temporal-alignment" id="toc-join-datasets-with-temporal-alignment" class="nav-link" data-scroll-target="#join-datasets-with-temporal-alignment">Join datasets with temporal alignment</a></li>
+  <li><a href="#validate-temporal-alignment" id="toc-validate-temporal-alignment" class="nav-link" data-scroll-target="#validate-temporal-alignment">Validate temporal alignment</a></li>
+  <li><a href="#function-to-standardize-road-classifications-across-different-reporting-formats" id="toc-function-to-standardize-road-classifications-across-different-reporting-formats" class="nav-link" data-scroll-target="#function-to-standardize-road-classifications-across-different-reporting-formats">Function to standardize road classifications across different reporting formats</a></li>
+  <li><a href="#process-and-clean-highway-mileage-data" id="toc-process-and-clean-highway-mileage-data" class="nav-link" data-scroll-target="#process-and-clean-highway-mileage-data">Process and clean highway mileage data</a></li>
+  <li><a href="#comprehensive-data-quality-validation" id="toc-comprehensive-data-quality-validation" class="nav-link" data-scroll-target="#comprehensive-data-quality-validation">Comprehensive data quality validation</a></li>
+  <li><a href="#save-cleaned-dataset-with-documentation" id="toc-save-cleaned-dataset-with-documentation" class="nav-link" data-scroll-target="#save-cleaned-dataset-with-documentation">Save cleaned dataset with documentation</a>
+  <ul class="collapse">
   <li><a href="#rubric-on-this-page" id="toc-rubric-on-this-page" class="nav-link" data-scroll-target="#rubric-on-this-page">Rubric: On this page</a></li>
   </ul></li>
   </ul>
@@ -429,6 +472,117 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ol>
 </section>
 </section>
+<section id="data-integration-process" class="level2">
+<h2 class="anchored" data-anchor-id="data-integration-process">Data Integration Process</h2>
+<p>When combining the datasets, we faced several challenges that required careful handling. The geographic alignment between the crash data and the PCI dataset was particularly challenging due to differences in road name formatting and segmentation. We developed a matching algorithm that standardized road names and used geographic coordinates to ensure accurate joining of the datasets, as shown in the following code:</p>
+</section>
+</section>
+<section id="standardize-road-names-in-both-datasets" class="level1">
+<h1>Standardize road names in both datasets</h1>
+<p>standardize_road_names &lt;- function(road_name) { road_name %&gt;% str_to_upper() %&gt;% str_replace_all(c( “AVENUE” = “AVE”, “BOULEVARD” = “BLVD”, “STREET” = “ST”, “ROAD” = “RD”, “HIGHWAY” = “HWY” )) %&gt;% str_trim() }</p>
+</section>
+<section id="clean-and-prepare-datasets-for-matching" class="level1">
+<h1>Clean and prepare datasets for matching</h1>
+<p>crash_data &lt;- crash_data %&gt;% mutate( Road.Name = standardize_road_names(Road.Name), location_key = paste(Road.Name, Municipality) )</p>
+<p>pci_data &lt;- pci_data %&gt;% mutate( StreetName = standardize_road_names(StreetName), location_key = paste(StreetName, City) )</p>
+</section>
+<section id="perform-fuzzy-matching-for-unmatched-roads" class="level1">
+<h1>Perform fuzzy matching for unmatched roads</h1>
+<p>library(stringdist) unmatched_roads &lt;- crash_data %&gt;% filter(!location_key %in% pci_data$location_key)</p>
+</section>
+<section id="match-using-string-distance-with-a-threshold" class="level1">
+<h1>Match using string distance with a threshold</h1>
+<p>fuzzy_matches &lt;- stringdistmatrix( unmatched_roads<span class="math inline">\(Road.Name,
+  pci_data\)</span>StreetName, method = “jw”, p = 0.1 ) %&gt;% as.data.frame()</p>
+<p>The integration of temporal data presented another challenge, particularly when combining crash reports with annual highway data. We implemented a time-based joining strategy that matched crash incidents with the corresponding annual data, ensuring that we maintained the temporal integrity of our analysis:</p>
+</section>
+<section id="prepare-temporal-joins-for-highway-data" class="level1">
+<h1>Prepare temporal joins for highway data</h1>
+<p>crash_data &lt;- crash_data %&gt;% mutate( crash_year = year(Crash.Date.Time), crash_month = month(Crash.Date.Time) )</p>
+<p>highway_data &lt;- highway_data %&gt;% mutate(report_year = year(report_date))</p>
+</section>
+<section id="join-datasets-with-temporal-alignment" class="level1">
+<h1>Join datasets with temporal alignment</h1>
+<p>combined_data &lt;- crash_data %&gt;% left_join( highway_data, by = c(“crash_year” = “report_year”, “Road.Name” = “highway_name”) ) %&gt;% # Handle cases where highway data is from previous year group_by(Road.Name) %&gt;% fill(c(traffic_volume, lane_width, surface_type), .direction = “downup”) %&gt;% ungroup()</p>
+</section>
+<section id="validate-temporal-alignment" class="level1">
+<h1>Validate temporal alignment</h1>
+<p>temporal_coverage &lt;- combined_data %&gt;% group_by(crash_year) %&gt;% summarise( crash_count = n(), has_highway_data = sum(!is.na(traffic_volume)) / n() )</p>
+<p>For the highway mileage, we have several steps for data cleaning. Our approach began with the implementation of a sophisticated road classification system that addresses the varying naming conventions found across different reporting years. We developed a standardize_road_class function that employs regular expressions to match different descriptions of the same road types, creating a unified and consistent classification scheme throughout the dataset.</p>
+<p>The handling of missing values formed a crucial component of our data cleaning process. We approached this challenge with context-specific solutions for different types of data. For instance, gaps in the Annual Average Daily Traffic (AADT) measurements were filled using median values to maintain statistical relevance, while missing lane mile data was conservatively set to zero. All other metric calculations incorporated robust aggregation methods to ensure accurate results even in the presence of incomplete data.</p>
+<p>Temporal alignment presented another critical aspect of our data preparation. We implemented proper date handling and year extraction procedures, which proved essential for matching highway infrastructure data with our crash records. This temporal standardization enables us to effectively track changes in road infrastructure over time and establish meaningful correlations with crash patterns. The alignment process ensures that our analysis captures the dynamic relationship between infrastructure changes and safety outcomes.</p>
+<p>Our quality validation process incorporated multiple layers of verification to ensure data integrity. We conducted thorough examinations of data completeness across different years, verified the consistency of measurements, analyzed the distribution of road types, and tracked year-over-year changes in key metrics.</p>
+</section>
+<section id="function-to-standardize-road-classifications-across-different-reporting-formats" class="level1">
+<h1>Function to standardize road classifications across different reporting formats</h1>
+<p>standardize_road_class &lt;- function(road_class) { case_when( # Interstate highways (I-495, I-270, etc.) str_detect(road_class, “(?i)interstate|I-[0-9]”) ~ “Interstate”,</p>
+<pre><code># Other controlled-access highways (MD 200)
+str_detect(road_class, "(?i)freeway|expressway|controlled") ~ "Other Freeways",
+
+# Major arterial roads (Georgia Ave, Rockville Pike)
+str_detect(road_class, "(?i)principal.*arterial|major.*highway") ~ "Principal Arterial",
+
+# Secondary arterial roads
+str_detect(road_class, "(?i)minor.*arterial|secondary") ~ "Minor Arterial",
+
+# Major collector roads
+str_detect(road_class, "(?i)major.*collector|primary.*collector") ~ "Major Collector",
+
+# Minor collector roads
+str_detect(road_class, "(?i)minor.*collector|secondary.*collector") ~ "Minor Collector",
+
+# Local roads and streets
+str_detect(road_class, "(?i)local|residential|unclassified") ~ "Local Roads",
+
+# Default classification for undefined categories
+TRUE ~ "Other"</code></pre>
+<p>) }</p>
+</section>
+<section id="process-and-clean-highway-mileage-data" class="level1">
+<h1>Process and clean highway mileage data</h1>
+<p>highway_data &lt;- read_excel(“Annual_Highway_Mileage.xlsx”) %&gt;% # Clean column names to consistent format janitor::clean_names() %&gt;%</p>
+<p># Filter specifically for Montgomery County data filter(county == “Montgomery”) %&gt;%</p>
+<p># Handle missing values in critical columns mutate( aadt = replace_na(aadt, median(aadt, na.rm = TRUE)), lane_miles = replace_na(lane_miles, 0),</p>
+<pre><code># Create standardized classifications
+road_class = standardize_road_class(functional_class),
+urban_rural = if_else(str_detect(area_type, "(?i)urban"), "Urban", "Rural"),
+
+# Convert dates to proper format
+report_date = mdy(report_date),
+year = year(report_date)</code></pre>
+<p>) %&gt;%</p>
+<p># Calculate key metrics by road classification group_by(road_class, urban_rural, year) %&gt;% summarize( # Total lane miles for each classification total_miles = sum(lane_miles, na.rm = TRUE),</p>
+<pre><code># Average daily traffic (weighted by segment length)
+avg_daily_traffic = weighted.mean(aadt, lane_miles, na.rm = TRUE),
+
+# Total vehicle miles traveled
+vehicle_miles_traveled = sum(vmt, na.rm = TRUE),
+
+# Number of segments in each classification
+segment_count = n(),
+
+# Additional metrics for analysis
+avg_segment_length = mean(lane_miles, na.rm = TRUE),
+total_intersections = sum(intersection_count, na.rm = TRUE)</code></pre>
+<p>) %&gt;% ungroup()</p>
+</section>
+<section id="comprehensive-data-quality-validation" class="level1">
+<h1>Comprehensive data quality validation</h1>
+<p>quality_check &lt;- highway_data %&gt;% group_by(year) %&gt;% summarize( # Basic completeness checks total_miles = sum(total_miles), missing_traffic = sum(is.na(avg_daily_traffic)), missing_vmt = sum(is.na(vehicle_miles_traveled)),</p>
+<pre><code># Consistency checks
+min_segment_length = min(avg_segment_length),
+max_segment_length = max(avg_segment_length),
+
+# Distribution checks
+urban_ratio = sum(urban_rural == "Urban") / n(),
+
+# Year-over-year change
+pct_change_miles = (total_miles - lag(total_miles)) / lag(total_miles) * 100</code></pre>
+<p>)</p>
+</section>
+<section id="save-cleaned-dataset-with-documentation" class="level1">
+<h1>Save cleaned dataset with documentation</h1>
+<p>write_rds(highway_data, “cleaned_highway_data.rds”) write_csv(quality_check, “highway_data_quality_report.csv”)</p>
 <section id="rubric-on-this-page" class="level2">
 <h2 class="anchored" data-anchor-id="rubric-on-this-page">Rubric: On this page</h2>
 <p>You will</p>
