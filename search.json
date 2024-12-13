@@ -189,13 +189,6 @@
     "text": "Conclusion\nThis analysis suggests that while PCI shows a statistically significant relationship with accident counts, its effect is weak and overshadowed by other factors. Even when accounting for weather and surface conditions, and allowing for nonlinear patterns, the explanatory power remains modest. The supplementary highway mileage visualization reinforces the notion that fundamental aspects like traffic volume, route usage, and driver behavior likely play more critical roles.\nIn summary, PCI is not a strong standalone predictor of accident frequency, and a more holistic, data-rich approach is needed to fully understand and mitigate traffic accidents."
   },
   {
-    "objectID": "data.html",
-    "href": "data.html",
-    "title": "Data Cleaning",
-    "section": "",
-    "text": "======="
-  },
-  {
     "objectID": "data.html#pavement-condition-index",
     "href": "data.html#pavement-condition-index",
     "title": "Data Cleaning",
