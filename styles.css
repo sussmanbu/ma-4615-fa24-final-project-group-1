@@ -1,1 +1,11 @@
 /* css styles */
+
+/* Hide code blocks in the rendered document */
+.sourceCode {
+  display: none;
+}
+
+/* Optional: Hide chunk options if visible */
+.has-extra-options {
+  display: none;
+}
