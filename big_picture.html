@@ -67,6 +67,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -115,8 +144,16 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#define-ui-for-app--" id="toc-define-ui-for-app--" class="nav-link active" data-scroll-target="#define-ui-for-app--">Define UI for app —-</a></li>
+  <li><a href="#define-server-logic--" id="toc-define-server-logic--" class="nav-link" data-scroll-target="#define-server-logic--">Define server logic —-</a></li>
+  <li><a href="#create-shiny-app--" id="toc-create-shiny-app--" class="nav-link" data-scroll-target="#create-shiny-app--">Create Shiny app —-</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -164,8 +201,52 @@ ul.task-list li input[type="checkbox"] {
 <p>keeping roads safe takes more than just paving over potholes. It means targeting the biggest risks, like managing wet-road hazards and encouraging safer driving during bad weather.</p>
 <p>By understanding these dynamics, we can make smarter decisions—whether that’s where to invest in road improvements or how to educate drivers about staying safe in tough conditions.</p>
 <p>So, the next time you drive on a cracked road or slow down in the rain, remember, every condition tells a story. And with the right insights, we can make that story a little safer for everyone.</p>
+<p>```{shinylive-r,message=FALSE} #| eval: false #| standalone: true #| echo: FALSE #| viewerHeight: 640</p>
+<p>library(tidyverse) library(shinylive)</p>
+<p>options(“readr.edition” = 1)</p>
+<section id="define-ui-for-app--" class="level1">
+<h1>Define UI for app —-</h1>
+<p>ui &lt;- fluidPage(</p>
+<p># App title —- titlePanel(“Interactive Crash Data Exploration”),</p>
+<p># Sidebar layout with input and output definitions —- sidebarLayout( # Sidebar panel for inputs sidebarPanel( # Input: Select column to visualize selectInput(inputId = “selected_column”, label = “Select a Column to Visualize:”, choices = c(“Speed.Limit”, “Injury.Severity”, “Surface.Condition”), selected = “Speed.Limit”),</p>
+<pre><code>  # Input: Slider for the number of bins
+  sliderInput(inputId = "bins",
+              label = "Number of bins:",
+              min = 1,
+              max = 50,
+              value = 20)
+),
+
+# Main panel for displaying outputs
+mainPanel(
+  # Output: Histogram
+  plotOutput(outputId = "histPlot"),
+  
+  # Display Insights
+  verbatimTextOutput(outputId = "summary")
+)</code></pre>
+<p>) )</p>
+</section>
+<section id="define-server-logic--" class="level1">
+<h1>Define server logic —-</h1>
+<p>server &lt;- function(input, output) {</p>
+<p># Load data from the provided URL data &lt;- read_rds(“https://sussmanbu.github.io/ma-4615-fa24-final-project-group-1/scripts/subset_data.rds”)</p>
+<p># Create histogram based on user input output<span class="math inline">\(histPlot &lt;- renderPlot({
+    ggplot(data, aes_string(x = input\)</span>selected_column)) + geom_histogram(bins = input<span class="math inline">\(bins, fill = "steelblue", color = "black") +
+      labs(x = input\)</span>selected_column, y = “Count”, title = paste(“Histogram of”, input$selected_column)) + theme_minimal() })</p>
+<p># Generate insights based on selected column output<span class="math inline">\(summary &lt;- renderPrint({
+    selected_data &lt;- data[[input\)</span>selected_column]] if (input<span class="math inline">\(selected_column == "Speed.Limit") {
+      avg_speed &lt;- mean(selected_data, na.rm = TRUE)
+      cat("Average Speed Limit (when crash occurred):", round(avg_speed, 2), "mph")
+    } else if (input\)</span>selected_column == “Injury.Severity”) { cat(“Injury Severity Counts:”) print(table(selected_data, useNA = “ifany”)) } else if (input$selected_column == “Surface.Condition”) { cat(“Surface Condition Distribution:”) print(table(selected_data, useNA = “ifany”)) } }) }</p>
+</section>
+<section id="create-shiny-app--" class="level1">
+<h1>Create Shiny app —-</h1>
+<p>shinyApp(ui, server)</p>
+<p>```</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
