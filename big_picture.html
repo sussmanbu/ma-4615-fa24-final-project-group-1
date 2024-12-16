@@ -164,6 +164,103 @@ ul.task-list li input[type="checkbox"] {
 <p>keeping roads safe takes more than just paving over potholes. It means targeting the biggest risks, like managing wet-road hazards and encouraging safer driving during bad weather.</p>
 <p>By understanding these dynamics, we can make smarter decisions—whether that’s where to invest in road improvements or how to educate drivers about staying safe in tough conditions.</p>
 <p>So, the next time you drive on a cracked road or slow down in the rain, remember, every condition tells a story. And with the right insights, we can make that story a little safer for everyone.</p>
+<pre class="{shinylive-r}"><code>#| eval: false
+#| standalone: true
+#| echo: FALSE
+#| viewerHeight: 640 
+
+library(tidyverse)
+library(shinylive)
+
+options("readr.edition" = 1)
+
+# Define UI for app ----
+ui &lt;- fluidPage(
+  
+  # App title ----
+  titlePanel("Interactive Crash Data Exploration"),
+  
+  # Sidebar layout with input and output definitions ----
+  sidebarLayout(
+    # Sidebar panel for inputs
+    sidebarPanel(
+      # Input: Select column to visualize
+      selectInput(inputId = "selected_column", 
+                  label = "Select a Column to Visualize:",
+                  choices = c("Speed.Limit", "Injury.Severity", "Surface.Condition"),
+                  selected = "Speed.Limit"),
+      
+      # Input: Slider for the number of bins
+      sliderInput(inputId = "bins",
+                  label = "Number of bins:",
+                  min = 1,
+                  max = 50,
+                  value = 20)
+    ),
+    
+    # Main panel for displaying outputs
+    mainPanel(
+      # Output: Histogram
+      plotOutput(outputId = "histPlot"),
+      
+      # Display Insights
+      verbatimTextOutput(outputId = "summary")
+    )
+  )
+)
+
+# Define server logic ----
+server &lt;- function(input, output) {
+  
+  # Load data from the provided URL
+  data &lt;- tryCatch(
+    {
+      read_rds("https://sussmanbu.github.io/ma-4615-fa24-final-project-group-1/scripts/subset_data.rds")
+    },
+    error = function(e) {
+      stop("Failed to load data. Please check the URL or file availability.")
+    }
+  )
+  
+  # Updated histogram/bar plot logic
+  output$histPlot &lt;- renderPlot({
+    if (is.numeric(data[[input$selected_column]])) {
+      # Numeric columns: Use histogram
+      ggplot(data, aes(x = !!sym(input$selected_column))) +
+        geom_histogram(bins = input$bins, fill = "steelblue", color = "black") +
+        labs(x = input$selected_column, y = "Count",
+             title = paste("Histogram of", input$selected_column)) +
+        theme_minimal()
+    } else {
+      # Categorical columns: Use bar chart
+      ggplot(data, aes(x = !!sym(input$selected_column))) +
+        geom_bar(fill = "steelblue", color = "black") +
+        labs(x = input$selected_column, y = "Count",
+             title = paste("Bar Chart of", input$selected_column)) +
+        theme_minimal()
+    }
+  })
+  
+  # Generate insights based on selected column
+  output$summary &lt;- renderPrint({
+    selected_data &lt;- data[[input$selected_column]]
+    if (input$selected_column == "Speed.Limit") {
+      avg_speed &lt;- mean(selected_data, na.rm = TRUE)
+      cat("Average Speed Limit (when crash occurred):", round(avg_speed, 2), "mph")
+    } else if (input$selected_column == "Injury.Severity") {
+      cat("Injury Severity Counts:\n")
+      print(table(selected_data, useNA = "ifany"))
+    } else if (input$selected_column == "Surface.Condition") {
+      cat("Surface Condition Distribution:\n")
+      print(table(selected_data, useNA = "ifany"))
+    }
+  })
+}
+
+
+# Create Shiny app ----
+shinyApp(ui, server)
+</code></pre>
 
 
 
