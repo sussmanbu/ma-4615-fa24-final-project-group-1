@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="Creating Shiny dataset">
 
-<title>Story and Question – Road Real Talk: Crashes, Conditions, and Rescue</title>
+<title>Data – Road Real Talk: Crashes, Conditions, and Rescue</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,25 +21,59 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -68,7 +103,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../styles.css">
 </head>
 
 <body class="nav-fixed">
@@ -78,7 +113,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Road Real Talk: Crashes, Conditions, and Rescue</span>
     </a>
   </div>
@@ -89,19 +124,19 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
+    <a class="nav-link" href="../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./big_picture.html" aria-current="page"> 
+    <a class="nav-link" href="../big_picture.html"> 
 <span class="menu-text">Story and Question</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./analysis.html"> 
+    <a class="nav-link" href="../analysis.html"> 
 <span class="menu-text">Analysis</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./data.html"> 
+    <a class="nav-link" href="../data.html"> 
 <span class="menu-text">Data Cleaning</span></a>
   </li>  
 </ul>
@@ -123,9 +158,14 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Story and Question</h1>
+<h1 class="title">Data</h1>
 </div>
 
+<div>
+  <div class="description">
+    Creating Shiny dataset
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
@@ -140,30 +180,21 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Potholes, cracks, and worn-out pavement—when we think about what causes traffic accidents, poor road conditions are often the first thing that comes to mind. But is the connection as straightforward as it seems?</p>
-<p>To find out, we dug into the data to see how road quality, weather, and surface conditions shape the likelihood of accidents. What we found might surprise you. While pavement conditions do play a role, they’re far from the whole story.</p>
-<p><strong>Road Quality Isn’t Everything</strong></p>
-<p>Roads are rated by the Pavement Condition Index (PCI), which measures their quality on a scale from terrible to perfect. If bad roads mean more accidents, we should see a clear relationship between PCI and accident counts.</p>
-<p>Instead? The connection is weak. A scatter plot with a trend line shows that while better roads slightly reduce accidents, the trend is subtle.</p>
-<p>What does this mean? Road conditions alone don’t explain much. Other factors—like weather and what’s on the road surface—may matter even more.</p>
-<p><strong>When Weather and Wet Roads Take the Wheel</strong></p>
-<p>Here’s where it gets interesting, wet surfaces (like roads after a storm) significantly increase accident counts.Rainy weather, on the other hand, seems to have the opposite effect—it actually reduces accidents.How does that make sense? It turns out drivers tend to slow down and be more careful when it’s raining, even though wet roads themselves are a major hazard.</p>
-<p>A multivariate visualization brings this dynamic to life, showing how weather and surface conditions interact with PCI to impact accidents.</p>
-<p><strong>It’s Not a Straight Line Complex Patterns in the Data</strong></p>
-<p>When we examined the relationship between PCI and accidents further, a surprising pattern emerged. Instead of a simple straight-line relationship, we found a U-shaped trend.</p>
-<p>This means accidents were more frequent at moderate PCI levels than at very high or very low PCI levels. Why? It’s hard to say for sure, but this might reflect how drivers behave or how other factors like traffic volume play a role.</p>
-<p>Our polynomial regression plot captures this complexity and adds a new layer to the story, road conditions affect accidents in more complicated ways than we expected.</p>
-<p><strong>Get Behind the Wheel, Explore the Data Yourself</strong></p>
-<p>Want to see these patterns for yourself? We’ve built an interactive dashboard where you can dig into the data.</p>
-<p>Toggle between weather conditions to see how rain or wet roads impact accident trends. Compare the results of linear and nonlinear models to understand the bigger picture. It’s an easy way to explore what’s happening on our roads and what factors matter most.</p>
-<p><strong>The Big Takeaways: Better Roads Help—But Not Much</strong></p>
-<p>While smoother pavement is linked to slightly fewer accidents, the effect is small. Weather and Wet Roads Matter More Wet roads increase accidents, while rainy weather may make drivers more cautious.</p>
-<p>Complex Relationships</p>
-<p>The U-shaped trend between PCI and accidents shows how other factors—like driver behavior or traffic flow—play a big role. What This Means for Safer Roads</p>
-<p>Our findings point to a broader truth</p>
-<p>keeping roads safe takes more than just paving over potholes. It means targeting the biggest risks, like managing wet-road hazards and encouraging safer driving during bad weather.</p>
-<p>By understanding these dynamics, we can make smarter decisions—whether that’s where to invest in road improvements or how to educate drivers about staying safe in tough conditions.</p>
-<p>So, the next time you drive on a cracked road or slow down in the rain, remember, every condition tells a story. And with the right insights, we can make that story a little safer for everyone.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">"dataset/cleaned_dataset_full.rds"</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>subset_data <span class="ot">&lt;-</span> data[,<span class="fu">c</span>(<span class="st">"Speed.Limit"</span>, <span class="st">"Surface.Condition"</span>, <span class="st">"Injury.Severity"</span>)]</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>subset_data<span class="sc">$</span>Surface.Condition[subset_data<span class="sc">$</span>Surface.Condition <span class="sc">==</span> <span class="st">""</span>] <span class="ot">&lt;-</span> <span class="st">"N/A"</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>subset_data <span class="ot">&lt;-</span> subset_data[<span class="dv">1</span><span class="sc">:</span><span class="dv">50</span>,]</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">saveRDS</span>(subset_data,<span class="at">file =</span> <span class="st">"dataset/subset_data.rds"</span>)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>loaded_data <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">"subset_data.rds"</span>)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">head</span>(loaded_data))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 
 
 
